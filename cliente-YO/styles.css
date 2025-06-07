@@ -403,7 +403,7 @@ a.button:hover {
 
   .container > img.photo{
     width: 100%;        /* ocupa el 100% del ancho del .container */
-    max-width: 200px;   /* pero nunca supera los 400px */
+    max-width: 300px;   /* pero nunca supera los 400px */
     height: auto;       /* mantiene la proporción */
     margin: 0 auto 1rem;
     display: block;     /* por si acaso */
