@@ -189,8 +189,8 @@ p.role {
 
 /* Foto */
 .photo {
-  width: 400px;
-  height: 400px;
+  width: 300px;
+  height: 300px;
   background: #ddd;
   border-radius: 50%;
   margin: 20px 0;
@@ -399,5 +399,24 @@ a.button:hover {
 /* Ajustes responsivos */
 @media (max-width: 600px) {
   h1 { font-size: 1.8em; }
-  .photo, .qr-space { width: 100px; height: 100px; }
+ .qr-space { width: 100px; height: 100px; }
+
+  .container > img.photo{
+    width: 100%;        /* ocupa el 100% del ancho del .container */
+    max-width: 200px;   /* pero nunca supera los 400px */
+    height: auto;       /* mantiene la proporción */
+    margin: 0 auto 1rem;
+    display: block;     /* por si acaso */
+    border-radius: 50%;
+}
+/* fuerza el tamaño de tu foto */
+/*img.photo {
+  display: block;        /* elimina espacios en línea */
+  /*width: 100%;          /* ancho fijo máximo */
+ /* max-width: 400px;       /* si el contenedor fuera más estrecho, se encoge */
+ /* height: auto;          /* mantiene proporción */
+ /* margin: 0 auto 1rem;   /* centrar y separar del texto */
+ /* border-radius: 50%;    /* para que siga siendo redonda */
+/*}*/
+
 }
