@@ -19,7 +19,8 @@ body {
   position: relative;
   overflow: hidden;
   max-width: 480px;
-  width: 90%;
+  width: 100%;
+  max-width: 100%;
   min-height: 100vh;
   margin: 0 auto;
   padding: 40px 20px 20px;
@@ -283,5 +284,25 @@ a.button:hover {
 /* Ajustes responsivos */
 @media (max-width: 600px) {
   h1 { font-size: 1.8em; }
-  .photo, .qr-space { width: 100px; height: 100px; }
+ .qr-space { width: 100px; height: 100px; }
+
+  .container > img.photo{
+    width: 100%;        /* ocupa el 100% del ancho del .container */
+    max-width: 300px;   /* pero nunca supera los 400px */
+    height: auto;       /* mantiene la proporción */
+    margin: 0 auto 1rem;
+    display: block;     /* por si acaso */
+    border-radius: 50%;
+}
+}
+/* Media-query para dispositivos pequeños */
+@media only screen and (max-width: 600px) {
+  .container {
+    width: 100vw;       /* todo el ancho de la ventana */
+    height: 100vh;      /* toda la altura de la ventana */
+    max-width: none;    /* quita cualquier límite previo */
+    margin: 0;          /* sin centrado automático */
+    padding: 0;         /* si quieres usar todo el espacio */
+    border-radius: 0;   /* opcional: quita esquinas redondeadas */
+  }
 }
