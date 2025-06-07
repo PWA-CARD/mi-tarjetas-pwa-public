@@ -297,12 +297,12 @@ a.button:hover {
     transform: translateY(-50%) rotate(0deg);
   }
   50% {
-    left: 60px;  /* 16px + 20px de recorrido */
+    left: 36px;  /* 16px + 20px de recorrido */
     opacity: 1;
     transform: translateY(-50%) rotate(0deg);
   }
   80% {
-    left: 60px;
+    left: 36px;
     opacity: 0.3;
     transform: translateY(-50%) rotate(0deg);
   }
