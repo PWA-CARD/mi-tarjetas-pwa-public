@@ -25,7 +25,14 @@
     crossorigin="anonymous"
     referrerpolicy="no-referrer"
   />
-
+<!-- Registrar Service Worker -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('./sw.js')
+        .then(() => console.log('Service Worker registrado correctamente'))
+        .catch(err => console.log('Error al registrar Service Worker:', err));
+    }
+  </script>
   
 </head>
 <body>  
@@ -164,13 +171,6 @@ END:VCARD
   });
 </script>
 
-  <!-- Registrar Service Worker -->
-  <script>
-    if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('./sw.js')
-        .then(() => console.log('Service Worker registrado correctamente'))
-        .catch(err => console.log('Error al registrar Service Worker:', err));
-    }
-  </script>
+  
 </body>
 </html>
