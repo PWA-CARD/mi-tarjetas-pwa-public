@@ -6,21 +6,18 @@
 }
 
 /* Base */
-html, body {
+body {
   height: 100%;
-  font-family: Arial, sans-serif;
-  background: linear-gradient(135deg, #74ebd5 0%, #ACB6E5 100%);
-  background-image:
-    linear-gradient(45deg, rgba(255,255,255,0.05) 25%, transparent 25%),
-    linear-gradient(-45deg, rgba(255,255,255,0.05) 25%, transparent 25%),
-    linear-gradient(45deg, transparent 75%, rgba(255,255,255,0.05) 75%),
-    linear-gradient(-45deg, transparent 75%, rgba(255,255,255,0.05) 75%);
-  background-size: 40px 40px;
+  font-family: Arial, sans-serif;   
+  background: linear-gradient(135deg, #74ebd5 0%, #ACB6E5 100%); 
+  background-color: rgb(81, 97, 107);
   margin: 0;
+  
 }
 
-/* Contenedor principal */
 .container {
+  position: relative;
+  overflow: hidden;
   max-width: 480px;
   width: 90%;
   min-height: 100vh;
@@ -29,33 +26,71 @@ html, body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: linear-gradient(135deg, #1f1c1c 30%, #0c3b6d 100%);
+  border-radius: 8px;
+  /*background: linear-gradient(135deg, #1f1c1c 30%, #0c3b6d 100%);
   box-shadow: 0 8px 20px rgba(0,0,0,0.08);
   border-radius: 12px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;*/
+  background-image:
+    linear-gradient(45deg, rgba(255,255,255,0.05) 25%, transparent 25%),
+    linear-gradient(-45deg, rgba(255,255,255,0.05) 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, rgba(255,255,255,0.05) 75%),
+    linear-gradient(-45deg, transparent 75%, rgba(255,255,255,0.05) 75%);
+  background-size: 40px 40px;
+ box-shadow: 0 12px 24px rgba(0,0,0,0.5);
 }
-.container:hover {
-  transform: translateY(-3px);
+
+/* Contenedor principal */
+ .container .bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  
+  /* Aseguramos que el gradiente sea más ancho que el contenedor, 
+     para poder desplazarlo horizontalmente */
+  background-image: linear-gradient(-60deg, #6c3 50%, #09f 50%);
+  background-size: 200% 100%;
+  background-position: 0% 0%;
+  
+  opacity: 0.5;
+  z-index: -1; /* Para que quede detrás del contenido */
+  
+  /* Aplicamos la animación sobre background-position */
+  animation: slide 3s ease-in-out infinite alternate;
+  }
+  .container .bg2 {
+  animation-direction:alternate-reverse;
+  animation-duration:4s;
+}
+
+.container .bg3 {
+  animation-duration:5s;
+}
+
+/*.container:hover {
+  transform: translateY(0);
   box-shadow: 0 12px 24px rgba(0,0,0,0.1);
-}
+}*/
 
 /* Títulos */
 h1 {
   font-size: 2.2em;
   margin-bottom: 10px;
-  color: #1a8bd6;
+  color: #183e57;
   text-align: center;
 }
 p.role {
   margin-bottom: 40px;
-  color: #96cdf1;
+  color: #304e63;
   text-align: center;
 }
 
 /* Foto */
 .photo {
-  width: 180px;
-  height: 180px;
+  width: 200px;
+  height: 200px;
   background: #ddd;
   border-radius: 50%;
   margin: 20px 0;
@@ -105,7 +140,7 @@ p.role {
   gap: 8px;
 }
 .contact-info a {
-  color: #007BFF;
+  color: #213041;
   text-decoration: none;
   display: flex;
   align-items: center;
@@ -130,11 +165,91 @@ a.button {
   text-align: center;
   box-shadow: 0 4px 10px rgba(0,123,255,0.2);
   transition: background 0.3s ease, box-shadow 0.3s ease;
+
+  /*flecha que recorre*/
+  position: relative;
+  overflow: hidden;
 }
 a.button:hover {
   background: #0056b3;
   box-shadow: 0 6px 14px rgba(0,123,255,0.3);
 }
+/* -----------------------------------
+  2) Keyframes: la flecha avanza un tramo corto
+-----------------------------------
+  - 0%   : inicio X = 16px (dentro del padding), opacidad 0 y rotada –45°.
+  - 20%  : sigue en X = 16px, opacidad 1 y rotada 0° (aparece horizontal).
+  - 50%  : avanza a X = 36px (solo 20px desde el 16px inicial), opacidad 1.
+  - 80%  : se mantiene en X = 36px con opacidad 0.3 (va desapareciendo).
+  - 100% : vuelve a X = 16px, opacidad 0 y rotada –45° (regresa y oculta).
+*/
+@keyframes mover-flecha-corto {
+  0% {
+    left: 16px;
+    opacity: 0;
+    transform: translateY(-50%) rotate(-45deg);
+  }
+  20% {
+    left: 16px;
+    opacity: 1;
+    transform: translateY(-50%) rotate(0deg);
+  }
+  50% {
+    left: 36px;  /* 16px + 20px de recorrido */
+    opacity: 1;
+    transform: translateY(-50%) rotate(0deg);
+  }
+  80% {
+    left: 36px;
+    opacity: 0.3;
+    transform: translateY(-50%) rotate(0deg);
+  }
+  100% {
+    left: 16px;
+    opacity: 0;
+    transform: translateY(-50%) rotate(-45deg);
+  }
+}
+@keyframes slide {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 100% 0%;
+  }
+}
+
+/* -----------------------------------
+  3) Estilos de la flecha (.flecha-boton)
+----------------------------------- */
+.flecha-boton {
+  position: absolute;       /* Para que left/top funcionen dentro de <a> */
+  top: 50%;
+  left: 16px;               /* Coincide con el 0% del keyframe */
+  transform: translateY(-50%) rotate(-45deg);
+  opacity: 0;               /* Arranca oculta */
+  width: 20px;              /* Un poco más grande para verlo bien */
+  height: 20px;
+  fill: #fff;               /* Color blanco, igual que el texto */
+
+  /* 2 segundos de duración, ease-out, en bucle infinito */
+  animation: mover-flecha-corto 2s ease-out infinite;
+}
+
+/* -----------------------------------
+  4) (Opcional) Para animar solo al hacer hover:
+-----------------------------------
+  Si quieres que la flecha no se mueva hasta que el cursor entre sobre el botón,
+  cámbialo así:
+
+  .flecha-boton {
+    animation: none;
+  }
+
+  a.button:hover .flecha-boton {
+    animation: mover-flecha-corto 2s ease-out infinite;
+  }
+*/
 
 /* Redes sociales */
 .links {
@@ -159,8 +274,8 @@ a.button:hover {
 }
 
 /* Colores específicos por red */
-.links a[href*="wa.me"]        { color: #25D366; background: rgba(37, 211, 102, 0.1); }
-.links a[href*="linkedin.com"] { color: #0A66C2; background: rgba(10, 102, 194, 0.1); }
+.links a[href*="wa.me"]        { color: #049637; background: rgba(6, 228, 87, 0.384); }
+.links a[href*="linkedin.com"] { color: #c9e0f8; background: rgba(4, 123, 228, 0.863); }
 .links a[href*="youtube.com"]  { color: #FF0000; background: rgba(255,   0,   0,   0.1); }
 .links a[href*="inmocrypto.es"]{ color: #007BFF; background: rgba(0,  123, 255, 0.1); }
 .links a.instagram             { color: #E4405F; background: rgba(228,  64,  95, 0.1); }

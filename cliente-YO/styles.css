@@ -6,21 +6,20 @@
 }
 
 /* Base */
-html, body {
+body {
   height: 100%;
-  font-family: Arial, sans-serif;
+  font-family: Arial, sans-serif;  
   background: linear-gradient(135deg, #74ebd5 0%, #ACB6E5 100%);
-  background-image:
-    linear-gradient(45deg, rgba(255,255,255,0.05) 25%, transparent 25%),
-    linear-gradient(-45deg, rgba(255,255,255,0.05) 25%, transparent 25%),
-    linear-gradient(45deg, transparent 75%, rgba(255,255,255,0.05) 75%),
-    linear-gradient(-45deg, transparent 75%, rgba(255,255,255,0.05) 75%);
-  background-size: 40px 40px;
+  
   margin: 0;
 }
 
+
 /* Contenedor principal */
 .container {
+  position: relative;
+  overflow: hidden;
+  z-index: 0;
   max-width: 480px;
   width: 90%;
   min-height: 100vh;
@@ -29,15 +28,151 @@ html, body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: linear-gradient(135deg, #1f1c1c 30%, #0c3b6d 100%);
+  border-radius: 8px;
+  background: linear-gradient(400deg, #050505 30%, #032b57 100%);
   box-shadow: 0 8px 20px rgba(0,0,0,0.08);
   border-radius: 12px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+ 
+  /*background-image:
+    linear-gradient(45deg, rgba(255,255,255,0.05) 25%, transparent 25%),
+    linear-gradient(-45deg, rgba(255,255,255,0.05) 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, rgba(255,255,255,0.05) 75%),
+    linear-gradient(-45deg, transparent 75%, rgba(255,255,255,0.05) 75%);
+  background-size: 40px 40px;  */
+  box-shadow: 0 12px 24px rgba(0,0,0,0.5);
 }
-.container:hover {
+
+/* 2) Contenedor de ripples SIN fondo. */
+.container .ripple-background {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 200%;
+  height: 200%;
+  pointer-events: none; 
+  background: transparent; /* para que no capture clicks */   
+  z-index: -1; /* detrás del contenido */
+}
+/* 3) Cada círculo: solo borde, transparente por dentro */
+.container .circle {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  border-radius: 50%;   
+  transform-origin: 0 100%;  /* esquina inferior izquierda */
+  animation: ripple 10s ease-in-out infinite;
+  filter: blur(30px);
+}
+
+/* 4) Tamaños y opacidades distintas */
+.container .xxlarge {
+  width: 1200px;
+  height: 1200px;
+  left: -120px;
+  bottom: -120px;
+  background: radial-gradient(circle at 0% 100%,
+    rgba(1, 81, 160, 0.3) 0%,
+    rgba(1, 80, 160, 0.527) 75%,
+    transparent 100%);
+  
+}
+.container .xlarge {
+   width: 1000px;
+  height: 1000px;
+  left: -100px;
+  bottom: -100px;
+  background: radial-gradient(circle at 0% 100%,
+    rgba(1, 81, 160,0.35) 0%,
+    rgba(1, 80, 160, 0.356) 75%,
+    transparent 100%
+  );
+}
+.container .large {
+  width: 800px;
+  height: 800px;
+  left: -80px;
+  bottom: -80px;
+  background: radial-gradient(circle at 0% 100%,
+    rgba(1, 81, 160,0.40) 0%,
+    rgba(1, 80, 160, 0.274) 75%,
+    transparent 100%
+  );
+  
+}
+.container .medium {
+ width: 600px;
+  height: 600px;
+  left: -60px;
+  bottom: -60px;
+  background: radial-gradient(circle at 0% 100%,
+    rgba(1, 81, 160,0.50) 0%,
+    rgba(1, 81, 160,0.200) 75%,
+    transparent 100%
+  );
+}
+.container .small {
+  width: 400px;
+  height: 400px;
+  left: -40px;
+  bottom: -40px;
+  background: radial-gradient(circle at 0% 100%,
+    rgba(1, 81, 160,0.60) 0%,
+    rgba(1, 81, 160,0.150) 75%,
+    transparent 100%
+  );
+  
+}
+/*.shade1{
+  opacity: 0.3;
+}
+.shade2{
+  opacity: 0.5;
+}
+
+.shade3{
+  opacity: 0.6;
+}
+
+.shade4{
+  opacity: 0.7;
+}
+
+.shade5{
+  opacity: 0.8;
+}*/
+/* Contenedor principal */
+ /*.container .bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  
+  /* Aseguramos que el gradiente sea más ancho que el contenedor, 
+     para poder desplazarlo horizontalmente */
+  /*background-image: linear-gradient(-60deg, rgb(18, 19, 18) 50%, rgb(9, 74, 117) 50%);
+  background-size: 200% 100%;
+  background-position: 0% 0%;
+  
+  opacity: 0.5;
+  z-index: -1; *//* Para que quede detrás del contenido */
+  
+  /* Aplicamos la animación sobre background-position */
+  /*animation: slide 3s ease-in-out infinite alternate;
+  }
+  .container .bg2 {
+  animation-direction:alternate-reverse;
+  animation-duration:4s;
+}*/
+
+/*.container .bg3 {
+  animation-duration:5s;
+}*/
+/*.container:hover {
   transform: translateY(-3px);
   box-shadow: 0 12px 24px rgba(0,0,0,0.1);
-}
+}*/
 
 /* Títulos */
 h1 {
@@ -54,14 +189,16 @@ p.role {
 
 /* Foto */
 .photo {
-  width: 180px;
-  height: 180px;
+  width: 200px;
+  height: 200px;
   background: #ddd;
   border-radius: 50%;
   margin: 20px 0;
   background-size: cover;
   background-position: center;
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  z-index: 1;
+ 
 }
 
 /* Código QR */
@@ -130,11 +267,105 @@ a.button {
   text-align: center;
   box-shadow: 0 4px 10px rgba(0,123,255,0.2);
   transition: background 0.3s ease, box-shadow 0.3s ease;
+
+  /*flecha que recorre*/
+  position: relative;
+  overflow: hidden;
 }
 a.button:hover {
   background: #0056b3;
   box-shadow: 0 6px 14px rgba(0,123,255,0.3);
 }
+/* -----------------------------------
+  2) Keyframes: la flecha avanza un tramo corto
+-----------------------------------
+  - 0%   : inicio X = 16px (dentro del padding), opacidad 0 y rotada –45°.
+  - 20%  : sigue en X = 16px, opacidad 1 y rotada 0° (aparece horizontal).
+  - 50%  : avanza a X = 36px (solo 20px desde el 16px inicial), opacidad 1.
+  - 80%  : se mantiene en X = 36px con opacidad 0.3 (va desapareciendo).
+  - 100% : vuelve a X = 16px, opacidad 0 y rotada –45° (regresa y oculta).
+*/
+@keyframes mover-flecha-corto {
+  0% {
+    left: 16px;
+    opacity: 0;
+    transform: translateY(-50%) rotate(-45deg);
+  }
+  20% {
+    left: 16px;
+    opacity: 1;
+    transform: translateY(-50%) rotate(0deg);
+  }
+  50% {
+    left: 60px;  /* 16px + 20px de recorrido */
+    opacity: 1;
+    transform: translateY(-50%) rotate(0deg);
+  }
+  80% {
+    left: 60px;
+    opacity: 0.3;
+    transform: translateY(-50%) rotate(0deg);
+  }
+  100% {
+    left: 16px;
+    opacity: 0;
+    transform: translateY(-50%) rotate(-45deg);
+  }
+}
+/*@keyframes slide {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 100% 0%;
+  }
+}*/
+
+@keyframes ripple{
+  0%{
+    transform: scale(0.3);
+  }
+  
+  50%{
+    transform: scale(0.5);
+  }
+  
+  100%{
+    transform: scale(0.3);
+  }
+}
+
+/* -----------------------------------
+  3) Estilos de la flecha (.flecha-boton)
+----------------------------------- */
+.flecha-boton {
+  position: absolute;       /* Para que left/top funcionen dentro de <a> */
+  top: 50%;
+  left: 16px;               /* Coincide con el 0% del keyframe */
+  transform: translateY(-50%) rotate(-45deg);
+  opacity: 0;               /* Arranca oculta */
+  width: 20px;              /* Un poco más grande para verlo bien */
+  height: 20px;
+  fill: #fff;               /* Color blanco, igual que el texto */
+
+  /* 2 segundos de duración, ease-out, en bucle infinito */
+  animation: mover-flecha-corto 5s ease-out infinite;
+}
+
+/* -----------------------------------
+  4) (Opcional) Para animar solo al hacer hover:
+-----------------------------------
+  Si quieres que la flecha no se mueva hasta que el cursor entre sobre el botón,
+  cámbialo así:
+
+  .flecha-boton {
+    animation: none;
+  }
+
+  a.button:hover .flecha-boton {
+    animation: mover-flecha-corto 2s ease-out infinite;
+  }
+*/
 
 /* Redes sociales */
 .links {
@@ -159,11 +390,11 @@ a.button:hover {
 }
 
 /* Colores específicos por red */
-.links a[href*="wa.me"]        { color: #25D366; background: rgba(37, 211, 102, 0.1); }
-.links a[href*="linkedin.com"] { color: #0A66C2; background: rgba(10, 102, 194, 0.1); }
-.links a[href*="youtube.com"]  { color: #FF0000; background: rgba(255,   0,   0,   0.1); }
-.links a[href*="inmocrypto.es"]{ color: #007BFF; background: rgba(0,  123, 255, 0.1); }
-.links a.instagram             { color: #E4405F; background: rgba(228,  64,  95, 0.1); }
+.links a[href*="wa.me"]        { color: #6fec9d; background: rgba(37, 211, 101, 0.479); }
+.links a[href*="linkedin.com"] { color: #eceef0; background: rgba(28, 136, 245, 0.479); }
+.links a[href*="youtube.com"]  { color: #FF0000; background: rgba(255, 0, 0, 0.267); }
+.links a[href*="inmocrypto.es"]{ color: #b7cfe9; background: rgba(0, 123, 255, 0.479); }
+.links a.instagram             { color: #E4405F; background: rgba(228, 64, 94, 0.39); }
 
 /* Ajustes responsivos */
 @media (max-width: 600px) {
