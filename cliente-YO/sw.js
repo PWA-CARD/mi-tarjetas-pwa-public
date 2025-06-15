@@ -1,4 +1,4 @@
-const CACHE_NAME = 'tarjeta-jm-v1.0.2.11';
+const CACHE_NAME = 'tarjeta-jm-v1.0.2.12';
 const CORE_ASSETS = [
   './index.html',
   './styles.css',
