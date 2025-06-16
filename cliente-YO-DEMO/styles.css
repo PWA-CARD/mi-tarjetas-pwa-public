@@ -1,0 +1,516 @@
+/* Reset básico */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Base */
+body {
+  height: 100%;
+  font-family: Arial, sans-serif;  
+  background: linear-gradient(135deg, #74ebd5 0%, #ACB6E5 100%);  
+  margin: 0;
+}
+
+
+/* Contenedor principal */
+.container {
+  position: relative;
+  overflow: hidden;
+  z-index: 0;
+  width: 100%;
+  max-width: 100%; 
+  height: auto; 
+  min-height: 100vh;
+  margin: 0;
+  padding: 40px 20px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 8px;
+  background: linear-gradient(400deg, #050505 30%, #032b57 100%);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  border-radius: 12px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+ 
+  /*background-image:
+    linear-gradient(45deg, rgba(255,255,255,0.05) 25%, transparent 25%),
+    linear-gradient(-45deg, rgba(255,255,255,0.05) 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, rgba(255,255,255,0.05) 75%),
+    linear-gradient(-45deg, transparent 75%, rgba(255,255,255,0.05) 75%);
+  background-size: 40px 40px;  */
+  box-shadow: 0 12px 24px rgba(0,0,0,0.5);
+
+
+}
+
+
+
+/* 2) Contenedor de ripples SIN fondo. */
+.container .ripple-background {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 200%;
+  height: 200%;
+  pointer-events: none; 
+  background: transparent; /* para que no capture clicks */   
+  z-index: -1; /* detrás del contenido */
+}
+/* 3) Cada círculo: solo borde, transparente por dentro */
+.container .circle {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  border-radius: 50%;   
+  transform-origin: 0 100%;  /* esquina inferior izquierda */
+  animation: ripple 10s ease-in-out infinite;
+  filter: blur(30px);
+}
+
+/* 4) Tamaños y opacidades distintas */
+.container .xxlarge {
+  width: 1200px;
+  height: 1200px;
+  left: -120px;
+  bottom: -120px;
+  background: radial-gradient(circle at 0% 100%,
+    rgba(1, 81, 160, 0.3) 0%,
+    rgba(1, 80, 160, 0.527) 75%,
+    transparent 100%);
+  
+}
+.container .xlarge {
+   width: 1000px;
+  height: 1000px;
+  left: -100px;
+  bottom: -100px;
+  background: radial-gradient(circle at 0% 100%,
+    rgba(1, 81, 160,0.35) 0%,
+    rgba(1, 80, 160, 0.356) 75%,
+    transparent 100%
+  );
+}
+.container .large {
+  width: 800px;
+  height: 800px;
+  left: -80px;
+  bottom: -80px;
+  background: radial-gradient(circle at 0% 100%,
+    rgba(1, 81, 160,0.40) 0%,
+    rgba(1, 80, 160, 0.274) 75%,
+    transparent 100%
+  );
+  
+}
+.container .medium {
+ width: 600px;
+  height: 600px;
+  left: -60px;
+  bottom: -60px;
+  background: radial-gradient(circle at 0% 100%,
+    rgba(1, 81, 160,0.50) 0%,
+    rgba(1, 81, 160,0.200) 75%,
+    transparent 100%
+  );
+}
+.container .small {
+  width: 400px;
+  height: 400px;
+  left: -40px;
+  bottom: -40px;
+  background: radial-gradient(circle at 0% 100%,
+    rgba(1, 81, 160,0.60) 0%,
+    rgba(1, 81, 160,0.150) 75%,
+    transparent 100%
+  )  
+  
+}
+
+
+/*.shade1{
+  opacity: 0.3;
+}
+.shade2{
+  opacity: 0.5;
+}
+
+.shade3{
+  opacity: 0.6;
+}
+
+.shade4{
+  opacity: 0.7;
+}
+
+.shade5{
+  opacity: 0.8;
+}*/
+/* Contenedor principal */
+ /*.container .bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  
+  /* Aseguramos que el gradiente sea más ancho que el contenedor, 
+     para poder desplazarlo horizontalmente */
+  /*background-image: linear-gradient(-60deg, rgb(18, 19, 18) 50%, rgb(9, 74, 117) 50%);
+  background-size: 200% 100%;
+  background-position: 0% 0%;
+  
+  opacity: 0.5;
+  z-index: -1; *//* Para que quede detrás del contenido */
+  
+  /* Aplicamos la animación sobre background-position */
+  /*animation: slide 3s ease-in-out infinite alternate;
+  }
+  .container .bg2 {
+  animation-direction:alternate-reverse;
+  animation-duration:4s;
+}*/
+
+/*.container .bg3 {
+  animation-duration:5s;
+}*/
+/*.container:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.1);
+}*/
+
+/* Títulos */
+h1 {
+  font-size: 2.2em;
+  margin-bottom: 10px;
+  color: #1a8bd6;
+  text-align: center;
+}
+p.role {
+  margin-bottom: 40px;
+  color: #96cdf1;
+  text-align: center;
+}
+
+/* Foto */
+.photo {
+  /* Tamaño responsivo: entre 100px y 300px irá escalando */
+  width: clamp(200px, 40vw, 600px);
+  
+  /* fuerza la misma altura que anchura */
+  aspect-ratio: 1 / 1;
+  
+  /* estilo de fondo */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  
+  /* círculo perfecto */
+  border-radius: 50%;
+  
+  /* si quieres conservar tu animación */
+  animation: mover-photo 3s ease-in-out;
+}
+/*ESTILO PARA LOGO*/
+
+.container-logo{
+  animation: mover-logo 6s ease-in-out;
+  z-index: 0;
+}
+
+.container-logo .logo-principal__img{
+ width: clamp(200px, 20vw, 300px);
+  height: auto;
+  display: block;
+  
+}
+
+ 
+
+
+/* Código QR */
+.qr-space {
+  width: 80vw;
+  max-width: 140px;
+  aspect-ratio: 1 / 1;
+  background: #f0f0f0;
+  border: 2px dashed #bbb;
+  border-radius: 8px;
+  margin: 20px 0 30px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #aaa;
+  font-size: 0.9em;
+}
+.qr-space img {
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  object-fit: contain;
+  display: block;
+}
+
+/* Sección inferior */
+.bottom-section {
+  width: 100%;
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+/* Información de contacto */
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+.contact-info a {
+  color: #007BFF;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.95em;
+  transition: color 0.3s ease;
+}
+.contact-info a:hover {
+  color: #0056b3;
+}
+
+/* Botón vCard */
+a.button {
+  display: block;
+  width: 100%;
+  padding: 12px 20px;
+  color: #fff;
+  background: #007BFF;
+  text-decoration: none;
+  border-radius: 25px;
+  font-size: 1em;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0,123,255,0.2);
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+  z-index: 1;
+
+  /*flecha que recorre*/
+  position: relative;
+  overflow: hidden;
+}
+a.button:hover {
+  background: #0056b3;
+  box-shadow: 0 6px 14px rgba(0,123,255,0.3);
+  z-index: 1;
+}
+/* -----------------------------------
+  2) Keyframes: la flecha avanza un tramo corto
+-----------------------------------
+  - 0%   : inicio X = 16px (dentro del padding), opacidad 0 y rotada –45°.
+  - 20%  : sigue en X = 16px, opacidad 1 y rotada 0° (aparece horizontal).
+  - 50%  : avanza a X = 36px (solo 20px desde el 16px inicial), opacidad 1.
+  - 80%  : se mantiene en X = 36px con opacidad 0.3 (va desapareciendo).
+  - 100% : vuelve a X = 16px, opacidad 0 y rotada –45° (regresa y oculta).
+*/
+@keyframes mover-flecha-corto {
+  0% {
+    left: 16px;
+    opacity: 0;
+    transform: translateY(-50%) rotate(-45deg);
+  }
+  20% {
+    left: 16px;
+    opacity: 1;
+    transform: translateY(-50%) rotate(0deg);
+  }
+  50% {
+    left: 36px;  /* 16px + 20px de recorrido */
+    opacity: 1;
+    transform: translateY(-50%) rotate(0deg);
+  }
+  80% {
+    left: 36px;
+    opacity: 0.3;
+    transform: translateY(-50%) rotate(0deg);
+  }
+  100% {
+    left: 16px;
+    opacity: 0;
+    transform: translateY(-50%) rotate(-45deg);
+  }
+}
+@keyframes mover-photo{
+
+  0%{
+    right: 0px;
+    opacity: 0;
+    transform: translateX(100%);
+  }
+     
+  10%{
+   right: 16px;
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+
+}
+@keyframes mover-logo{
+   0%{
+    left: 0px;
+    opacity: 0;
+    transform: translateX(100%);
+  }
+     
+  10%{
+   left: 16px;
+    opacity: 0;
+    transform: translateX(100%);
+  }
+}
+/*@keyframes slide {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 100% 0%;
+  }
+}*/
+
+@keyframes ripple{
+  0%{
+    transform: scale(0.3);
+  }
+  
+  50%{
+    transform: scale(0.5);
+  }
+  
+  100%{
+    transform: scale(0.3);
+  }
+}
+
+/* -----------------------------------
+  3) Estilos de la flecha (.flecha-boton)
+----------------------------------- */
+.flecha-boton {
+  position: absolute;       /* Para que left/top funcionen dentro de <a> */
+  top: 50%;
+  left: 16px;               /* Coincide con el 0% del keyframe */
+  transform: translateY(-50%) rotate(-45deg);
+  opacity: 0;               /* Arranca oculta */
+  width: 20px;              /* Un poco más grande para verlo bien */
+  height: 20px;
+  fill: #fff;               /* Color blanco, igual que el texto */
+
+  /* 2 segundos de duración, ease-out, en bucle infinito */
+  animation: mover-flecha-corto 5s ease-out infinite;
+  z-index: 0;
+}
+
+/* -----------------------------------
+  4) (Opcional) Para animar solo al hacer hover:
+-----------------------------------
+  Si quieres que la flecha no se mueva hasta que el cursor entre sobre el botón,
+  cámbialo así:
+
+  .flecha-boton {
+    animation: none;
+  }
+
+  a.button:hover .flecha-boton {
+    animation: mover-flecha-corto 2s ease-out infinite;
+  }
+*/
+
+/* Redes sociales */
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+}
+.links a {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  text-decoration: none;
+  font-size: 1.1em;
+  padding: 8px 12px;
+  border-radius: 20px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.links a:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* Colores específicos por red */
+.links a[href*="wa.me"]        { color: #6fec9d; background: rgba(37, 211, 101, 0.479); }
+.links a[href*="linkedin.com"] { color: #eceef0; background: rgba(28, 136, 245, 0.479); }
+.links a[href*="youtube.com"]  { color: #FF0000; background: rgba(255, 0, 0, 0.267); }
+.links a[href*="inmocrypto.es"]{ color: #b7cfe9; background: rgba(0, 123, 255, 0.479); }
+.links a.instagram             { color: #E4405F; background: rgba(228, 64, 94, 0.39); }
+
+/* Ajustes responsivos */
+@media (max-width: 600px) {
+  h1 { font-size: 1.8em; }
+ .qr-space { width: 100px; height: 100px; }
+
+ 
+ }
+
+  .container > img.photo{
+    width: auto;        /* ocupa el 100% del ancho del .container */
+    max-width: 300px;   /* pero nunca supera los 400px */
+    height: auto;       /* mantiene la proporción */
+    margin: 0 auto 1rem;
+    display: block;     /* por si acaso */
+    border-radius: 50%;
+}
+/* fuerza el tamaño de tu foto */
+/*img.photo {
+  display: block;        /* elimina espacios en línea */
+  /*width: 100%;          /* ancho fijo máximo */
+ /* max-width: 400px;       /* si el contenedor fuera más estrecho, se encoge */
+ /* height: auto;          /* mantiene proporción */
+ /* margin: 0 auto 1rem;   /* centrar y separar del texto */
+ /* border-radius: 50%;    /* para que siga siendo redonda */
+/*}*/
+
+
+/* Media-query para dispositivos pequeños */
+@media only screen and (max-width: 600px) {
+  .container {
+    width: 100vw;       /* todo el ancho de la ventana */
+    height: 100vh;      /* toda la altura de la ventana */
+    max-width: none;    /* quita cualquier límite previo */
+    margin: 0;          /* sin centrado automático */
+    padding: 0;         /* si quieres usar todo el espacio */
+    border-radius: 0;   /* opcional: quita esquinas redondeadas */
+  }
+}
+/* Opcional: afinar en breakpoints */
+@media (max-width: 600px) {
+  .container-logo .logo-principal__img {
+    width: 35vw;      /* p.ej. 25% del ancho en móviles */
+    max-width: 300px; /* pero hasta 120px */
+  }
+}
+
+@media (min-width: 601px) and (max-width: 1024px) {
+  .container-logo .logo-principal__img {
+    width: 20vw;      /* 20% en tablets/portátiles */
+    max-width: 200px;
+  }
+}
+
+@media (min-width: 1025px) {
+  .container-logo .logo-principal__img {
+    width: 40vw;      /* 10% en pantallas grandes */
+    max-width: 300px;
+  }
+}
