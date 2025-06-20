@@ -15,6 +15,7 @@ body {
   line-height: 1.6;
   position: absolute;
   margin: 0;
+  overflow: scroll;
 }
 .lines {
   position: absolute;
