@@ -340,7 +340,7 @@ p.role {
   background: #f0f0f0;
   border: 2px dashed #bbb;
   border-radius: 8px;
-  top: 10vh;
+  top: 5vh;
   margin: 0 auto;
   position: relative;
   color: #aaa;
@@ -634,7 +634,7 @@ a.button:hover {
 /* Opcional: afinar en breakpoints */
 @media (min-width: 576px) {
   h1 { font-size: 1.8em; }
-  .qr-space { width: 10vw; 
+  .qr-space { width: 20vw; 
     height: auto; 
     margin: 0 auto;
     top: 4vh
@@ -662,12 +662,13 @@ a.button:hover {
     margin: 0;
     padding: 0;
     border-radius: 0;
+    bottom: 10vh;
   }
   
 }
 
 @media (min-width: 768px) {
-  .qr-space { width: 13vw; height: auto; margin: 0 auto;top: 3vh}
+  .qr-space { width: 20vw; height: auto; margin: 0 auto;top: 3vh}
   .container-logo .logo-principal__img {
     width: 20vw;      /* 20% en tablets/portátiles */
     max-width: 200px;
@@ -687,11 +688,12 @@ a.button:hover {
     margin: 0;
     padding: 0;
     border-radius: 0;
+    bottom: 10vh;
   }
 }
 
 @media (min-width: 992px) {
-  .qr-space { width: 17vw; height: auto; margin: 0 auto; top: 4vh}
+  .qr-space { width: 20vw; height: auto; margin: 0 auto; top: 4vh}
   .container-logo .logo-principal__img {
     width: 20vw;      /* 10% en pantallas grandes */
     max-width: 200px;
@@ -711,6 +713,7 @@ a.button:hover {
     margin: 0;
     padding: 0;
     border-radius: 0;
+    bottom: 10vh;
   }
 }
 @media (min-width: 1200px) {
@@ -726,5 +729,6 @@ a.button:hover {
     margin: 0;
     padding: 0;
     border-radius: 0;
+    bottom: 10vh;
   }
 }
