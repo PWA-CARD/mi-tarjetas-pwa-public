@@ -11,11 +11,11 @@ body {
   font-family: Arial, sans-serif;  
   background: #171717; 
   color: #000;
-  overflow: hidden; 
+  overflow: scroll; 
   line-height: 1.6;
   position: absolute;
   margin: 0;
-  overflow: scroll;
+ 
 }
 .lines {
   position: absolute;
