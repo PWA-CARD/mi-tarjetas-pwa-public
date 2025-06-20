@@ -260,7 +260,7 @@ h1 {
   text-align: center;
 }
 p.role {
-  margin-bottom: 40px;
+  margin-bottom: 5px;
   color: #96cdf1;
   text-align: center;
 }
@@ -334,13 +334,14 @@ p.role {
   align-items: center;
   justify-content: center;
   /*width: 100vw;*/
-  /*max-width: 140px;*/
+  max-width: 200px;
+  height: auto;
   aspect-ratio: 1 / 1;
   background: #f0f0f0;
   border: 2px dashed #bbb;
   border-radius: 8px;
-  
-  margin: 20px 0 10px 0;
+  top: 10vh;
+  margin: 0 auto;
   position: relative;
   color: #aaa;
   font-size: 0.9em;
@@ -575,8 +576,8 @@ a.button:hover {
 .links a.instagram             { color: #E4405F; background: rgba(228, 64, 94, 0.39); }
 
 /* Ajustes responsivos */
-@media (max-width: 600px) {
-  h1 { font-size: 1.8em; }
+/*@media (max-width: 600px) {
+  
  .qr-space { width: 30vw; height: auto; margin: 0 auto;top: 8vh}
 
  
@@ -631,11 +632,20 @@ a.button:hover {
 }*/
 
 /* Opcional: afinar en breakpoints */
-@media (max-width: 600px) {
-  .qr-space { width: 30vw; height: auto; margin: 0 auto;top: 8vh}
+@media (min-width: 576px) {
+  h1 { font-size: 1.8em; }
+  .qr-space { width: 10vw; 
+    height: auto; 
+    margin: 0 auto;
+    top: 4vh
+  }
   .container-logo .logo-principal__img {
-    width: 40vw;      /* p.ej. 25% del ancho en móviles */
-    max-width: 300px; /* pero hasta 120px */
+    width: 20vw;      /* p.ej. 25% del ancho en móviles */
+    max-width: 200px; /* pero hasta 120px */
+  }
+  p.role{
+    margin: 0 auto;
+    bottom: 0;
   }
   body{
     width: 100vw;
@@ -645,10 +655,19 @@ a.button:hover {
     padding: 0;
     border-radius: 0;
   }
+  footer{
+    width: 100vw;
+    height: 100vh;
+    max-width: none;
+    margin: 0;
+    padding: 0;
+    border-radius: 0;
+  }
+  
 }
 
-@media (min-width: 601px) and (max-width: 1024px) {
-  .qr-space { width: 20vw; height: auto; margin: 0 auto;top: 8vh}
+@media (min-width: 768px) {
+  .qr-space { width: 13vw; height: auto; margin: 0 auto;top: 3vh}
   .container-logo .logo-principal__img {
     width: 20vw;      /* 20% en tablets/portátiles */
     max-width: 200px;
@@ -661,15 +680,46 @@ a.button:hover {
     padding: 0;
     border-radius: 0;
   }
+  footer{
+    width: 100vw;
+    height: 100vh;
+    max-width: none;
+    margin: 0;
+    padding: 0;
+    border-radius: 0;
+  }
 }
 
-@media (min-width: 1025px) {
-  .qr-space { width: 20vw; height: auto; margin: 0 auto; top: 8vh}
+@media (min-width: 992px) {
+  .qr-space { width: 17vw; height: auto; margin: 0 auto; top: 4vh}
   .container-logo .logo-principal__img {
-    width: 40vw;      /* 10% en pantallas grandes */
-    max-width: 300px;
+    width: 20vw;      /* 10% en pantallas grandes */
+    max-width: 200px;
   }
   body{
+    width: 100vw;
+    height: 100vh;
+    max-width: none;
+    margin: 0;
+    padding: 0;
+    border-radius: 0;
+  }
+  footer{
+    width: 100vw;
+    height: 100vh;
+    max-width: none;
+    margin: 0;
+    padding: 0;
+    border-radius: 0;
+  }
+}
+@media (min-width: 1200px) {
+  html{
+    width: 100vw;
+    height: 100vh;
+    
+  }
+  footer{
     width: 100vw;
     height: 100vh;
     max-width: none;
