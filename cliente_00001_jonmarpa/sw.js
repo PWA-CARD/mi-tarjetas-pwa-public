@@ -4,6 +4,7 @@ const CORE_ASSETS = [
   './styles.css',
   './manifest.json',
   './sw.js',
+  './qr00001.png',
   './Logo-Inmo-Crypto 1.png',
   './icons/apple-icon-180.png',
   './icons/icon-192.png',
