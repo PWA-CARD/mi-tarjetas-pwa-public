@@ -4,19 +4,19 @@ const TARJETAS = [
     nombre: "Jonathan Martínez",
     desc: "Tarjeta de contacto personal y profesional.",
     img: "tarjeta1/mifoto.png",   // ruta relativa a index.html
-    url: "tarjeta1/"
+    url: "https://github.com/PWA-CARD/mi-tarjetas-pwa-public/tree/main/JonathanMartinez"
   },
   {
     nombre: "Laura López",
     desc: "Tarjeta digital para networking.",
     img: "tarjeta2/mifoto.png",
-    url: "tarjeta2/"
+    url: "https://github.com/PWA-CARD/mi-tarjetas-pwa-public/blob/main/cliente-DEMO"
   },
   {
     nombre: "Ejemplo Empresa",
     desc: "Tarjeta corporativa con datos de empresa.",
     img: "tarjeta3/logo2.png",
-    url: "tarjeta3/"
+    url: "https://pwa-card.github.io/mi-tarjetas-pwa-public/cliente-YO-DEMO/"
   },
   // Añade tantas tarjetas como quieras
 ];
