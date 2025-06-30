@@ -277,3 +277,80 @@ h1 {
   .argumentario {padding: 14px 6px 11px 6px; font-size: 1.01em;}
 }
 @keyframes fadeIn {from{opacity:0;}to{opacity:1;}}
+.catalogo-section {
+  background: #fff;
+  padding: 30px 0 20px 0;
+}
+.buscador {
+  text-align: center;
+  margin-bottom: 22px;
+}
+.buscador input {
+  border: 1.5px solid #c3e0d2;
+  border-radius: 8px;
+  padding: 11px 20px;
+  font-size: 1.07em;
+  outline: none;
+  width: 100%;
+  max-width: 330px;
+  margin: 0 auto;
+  background: #f0faf0;
+  box-shadow: 0 1px 5px #217a4705;
+}
+.tarjetas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  justify-content: center;
+}
+.tarjeta {
+  background: #e0fce7;
+  border-radius: 14px;
+  box-shadow: 0 2px 11px #217a4712;
+  width: 210px;
+  text-align: center;
+  padding: 18px 11px 16px 11px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  transition: transform 0.13s, box-shadow 0.13s;
+  position: relative;
+}
+.tarjeta:hover {
+  transform: translateY(-5px) scale(1.03);
+  box-shadow: 0 6px 20px #217a471f;
+}
+.tarjeta img {
+  width: 68px;
+  height: 68px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 7px;
+  border: 2px solid #fff;
+  background: #fff;
+}
+.tarjeta-nombre {
+  font-weight: bold;
+  color: #217a47;
+  font-size: 1.06em;
+  margin: 6px 0 3px 0;
+}
+.tarjeta-desc {
+  color: #34805b;
+  font-size: 0.97em;
+  margin-bottom: 8px;
+  min-height: 28px;
+}
+.tarjeta-enlace {
+  display: inline-block;
+  margin-top: 3px;
+  background: #217a47;
+  color: #fff;
+  border-radius: 7px;
+  padding: 8px 19px;
+  font-size: 0.97em;
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: 0 1px 6px #217a4710;
+  transition: background 0.13s;
+}
+.tarjeta-enlace:hover {background: #17904b;}

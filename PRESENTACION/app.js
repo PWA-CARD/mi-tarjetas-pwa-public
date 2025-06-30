@@ -1,9 +1,8 @@
-// ==== Aquí defines tus tarjetas ====
 const TARJETAS = [
   {
     nombre: "Jonathan Martínez",
     desc: "Tarjeta de contacto personal y profesional.",
-    img: "tarjeta1/mifoto.png",   // ruta relativa a index.html
+    img: "tarjeta1/mifoto.png",
     url: "https://pwa-card.github.io/mi-tarjetas-pwa-public/cliente_00001_jonmarpa/"
   },
   {
@@ -17,23 +16,18 @@ const TARJETAS = [
     desc: "Tarjeta corporativa con datos de empresa.",
     img: "tarjeta3/logo2.png",
     url: "https://pwa-card.github.io/mi-tarjetas-pwa-public/cliente-YO-DEMO/"
-  },
-  // Añade tantas tarjetas como quieras
+  }
 ];
 
-// ==== Renderizado dinámico de tarjetas ====
 function mostrarTarjetas(filtro="") {
   const cont = document.getElementById('tarjetas-listado');
+  if(!cont) return;
   cont.innerHTML = "";
   let count = 0;
   TARJETAS.forEach(t => {
     const nombre = t.nombre.toLowerCase();
     const desc = t.desc ? t.desc.toLowerCase() : "";
-    if (
-      !filtro ||
-      nombre.includes(filtro) ||
-      desc.includes(filtro)
-    ) {
+    if (!filtro || nombre.includes(filtro) || desc.includes(filtro)) {
       count++;
       const div = document.createElement('div');
       div.className = "tarjeta";
@@ -43,9 +37,7 @@ function mostrarTarjetas(filtro="") {
         <div class="tarjeta-desc">${t.desc||""}</div>
         <a href="${t.url}" target="_blank" class="tarjeta-enlace">Ver tarjeta</a>
       `;
-      // Permite abrir tarjeta al hacer clic en toda la caja
       div.addEventListener("click", (e) => {
-        // Solo si no hacen clic en el botón
         if(!e.target.classList.contains('tarjeta-enlace')){
           window.open(t.url, "_blank");
         }
@@ -58,21 +50,19 @@ function mostrarTarjetas(filtro="") {
   }
 }
 
-document.addEventListener("DOMContentLoaded", ()=>{
-  mostrarTarjetas();
-
-  const filtro = document.getElementById("filtroTarjetas");
-  filtro.addEventListener("input", function() {
-    mostrarTarjetas(this.value.trim().toLowerCase());
-  });
-});
-
 const GOOGLE_APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbw07hhd4gqHDtLSOBBaSN69Mb-OoDPiwOqvFP_3UPqjRKTZAoDHuYG9NEv6QZT7NTgV/exec";
 
-document.addEventListener("DOMContentLoaded", ()=>{
-  // ... (el resto de código de tarjetas y filtro)
+document.addEventListener("DOMContentLoaded", () => {
+  // CATÁLOGO DE TARJETAS Y BUSCADOR
+  mostrarTarjetas();
+  const filtro = document.getElementById("filtroTarjetas");
+  if (filtro) {
+    filtro.addEventListener("input", function() {
+      mostrarTarjetas(this.value.trim().toLowerCase());
+    });
+  }
 
-  // Formulario de contacto
+  // FORMULARIO DE CONTACTO
   const form = document.getElementById('form-contacto');
   if(form) {
     form.addEventListener('submit', async function(e) {
@@ -85,10 +75,10 @@ document.addEventListener("DOMContentLoaded", ()=>{
         for (const pair of data.entries()) {
           params.append(pair[0], pair[1]);
         }
-        const response = await fetch(GOOGLE_APPS_SCRIPT_URL, {
+        await fetch(GOOGLE_APPS_SCRIPT_URL, {
           method: "POST",
           body: params,
-          mode: "no-cors" // Necesario con Google Apps Script
+          mode: "no-cors"
         });
         estado.textContent = "¡Mensaje enviado! Gracias por contactar.";
         form.reset();
@@ -98,4 +88,3 @@ document.addEventListener("DOMContentLoaded", ()=>{
     });
   }
 });
-
