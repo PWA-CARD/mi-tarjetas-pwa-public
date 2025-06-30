@@ -7,10 +7,10 @@ const TARJETAS = [
     url: "https://pwa-card.github.io/mi-tarjetas-pwa-public/cliente_00001_jonmarpa/"
   },
   {
-    nombre: "Laura López",
+    nombre: "Laura López-DEMO",
     desc: "Tarjeta digital para networking.",
     img: "tarjeta2/mifoto.png",
-    url: "https://github.com/PWA-CARD/mi-tarjetas-pwa-public/blob/main/cliente-DEMO"
+    url: "https://pwa-card.github.io/mi-tarjetas-pwa-public/cliente-DEMO/"
   },
   {
     nombre: "Ejemplo Empresa",
