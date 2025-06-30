@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Tarjetas Digitales Personalizadas | Tu Empresa Más Profesional</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="header-landing">
+    <div class="container">
+      <h1>Tarjetas Digitales Personalizadas</h1>
+      <div class="argumentario">
+        <b>Haz que tu empresa destaque</b> con una tarjeta digital única. <br>
+        Personalizamos tu tarjeta con los <span class="colores-empresa">colores y logo de tu marca</span>. 
+        Ideal para compartir tu contacto, redes sociales, web y mucho más, <b>en un solo toque</b> y desde cualquier móvil.<br>
+        <a href="#contacto" class="btn-argumentario">Solicita información</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="ventajas-section">
+    <div class="container">
+      <h2 class="subtitulo">¿Por qué elegir una tarjeta digital?</h2>
+      <div class="ventajas-lista">
+        <div class="ventaja">
+          <span class="emoji">📱</span>
+          <h3>Siempre a mano</h3>
+          <p>Tu contacto profesional accesible en cualquier momento, incluso sin conexión.</p>
+        </div>
+        <div class="ventaja">
+          <span class="emoji">🎨</span>
+          <h3>Diseño personalizado</h3>
+          <p>Colores y logotipo de tu empresa para reflejar tu identidad corporativa.</p>
+        </div>
+        <div class="ventaja">
+          <span class="emoji">🔗</span>
+          <h3>Enlaces y QR</h3>
+          <p>Incluye tu web, redes sociales, WhatsApp y un QR para compartir fácil.</p>
+        </div>
+        <div class="ventaja">
+          <span class="emoji">🌱</span>
+          <h3>Ecológica y sostenible</h3>
+          <p>Olvídate del papel, actualiza tus datos sin volver a imprimir.</p>
+        </div>
+        <div class="ventaja">
+          <span class="emoji">🚀</span>
+          <h3>Entrega en 72h</h3>
+          <p>Te enviamos tu tarjeta digital lista para usar, compartir o instalar en el móvil.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="ejemplos-section">
+    <div class="container">
+      <h2 class="subtitulo">Ejemplos de tarjetas digitales</h2>
+      <div class="ejemplos-galeria">
+        <!-- Ejemplo 1 -->
+        <div class="ejemplo-tarjeta">
+          <img src="ejemplos/ejemplo1.png" alt="Ejemplo 1">
+          <div class="ejemplo-txt">
+            <b>Tarjeta corporativa</b>
+            <span>Colores de empresa + datos completos</span>
+          </div>
+        </div>
+        <!-- Ejemplo 2 -->
+        <div class="ejemplo-tarjeta">
+          <img src="ejemplos/ejemplo2.png" alt="Ejemplo 2">
+          <div class="ejemplo-txt">
+            <b>Tarjeta minimalista</b>
+            <span>Foto, nombre y QR para compartir</span>
+          </div>
+        </div>
+        <!-- Ejemplo 3 -->
+        <div class="ejemplo-tarjeta">
+          <img src="ejemplos/ejemplo3.png" alt="Ejemplo 3">
+          <div class="ejemplo-txt">
+            <b>Con enlaces directos</b>
+            <span>Web, LinkedIn, WhatsApp y mucho más</span>
+          </div>
+        </div>
+      </div>
+      <div class="cta-mas-ejemplos">
+        <a href="#contacto" class="btn-ejemplo">Quiero mi tarjeta digital</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="proceso-section">
+    <div class="container">
+      <h2 class="subtitulo">¿Cómo funciona?</h2>
+      <ol class="proceso-pasos">
+        <li><b>Contacta con nosotros.</b> Te asesoramos y te pedimos tus datos, logo y colores.</li>
+        <li><b>Diseñamos tu tarjeta.</b> Te enviamos una demo en 72h para que la revises.</li>
+        <li><b>Publicamos y te ayudamos a instalarla.</b> Accedes a tu tarjeta online y la puedes añadir a tu móvil o compartir con un QR.</li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="testimonios-section">
+    <div class="container">
+      <h2 class="subtitulo">Testimonios</h2>
+      <div class="testimonios-lista">
+        <div class="testimonio">
+          <p>“Ahora comparto mi contacto y redes en un segundo, todos se quedan flipando. Súper útil en eventos.”</p>
+          <span>- Marta, CEO</span>
+        </div>
+        <div class="testimonio">
+          <p>“Olvidé mis tarjetas físicas en casa, pero llevaba la digital en el móvil. ¡Salvavidas total!”</p>
+          <span>- Álvaro, Freelance</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contacto-section" id="contacto">
+    <div class="container">
+      <h2 class="subtitulo">¿Te interesa? Solicita información sin compromiso</h2>
+      <div class="formulario-contacto-container">
+        <form id="form-contacto" class="formulario-contacto">
+          <label for="nombre">Nombre:</label>
+          <input type="text" name="nombre" id="nombre" required>
+
+          <label for="email">Email:</label>
+          <input type="email" name="email" id="email" required>
+
+          <label for="mensaje">Mensaje:</label>
+          <textarea name="mensaje" id="mensaje" rows="4" required placeholder="¿Para cuántas personas quieres la tarjeta? ¿Tienes ya logo y colores?"></textarea>
+
+          <button type="submit">Enviar mensaje</button>
+          <div id="mensaje-estado" class="mensaje-estado"></div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer-landing">
+    <div class="container">
+      <div class="footer-txt">
+        &copy; 2025 Tarjetas Digitales Personalizadas | Diseño y desarrollo a medida
+      </div>
+    </div>
+  </footer>
+  <script src="app.js"></script>
+</body>
+</html>
