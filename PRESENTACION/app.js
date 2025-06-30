@@ -4,7 +4,7 @@ const TARJETAS = [
     nombre: "Jonathan Martínez",
     desc: "Tarjeta de contacto personal y profesional.",
     img: "tarjeta1/mifoto.png",   // ruta relativa a index.html
-    url: "https://github.com/PWA-CARD/mi-tarjetas-pwa-public/tree/main/JonathanMartinez"
+    url: "https://pwa-card.github.io/mi-tarjetas-pwa-public/cliente_00001_jonmarpa/"
   },
   {
     nombre: "Laura López",
