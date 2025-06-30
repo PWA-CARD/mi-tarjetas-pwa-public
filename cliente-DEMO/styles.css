@@ -275,10 +275,10 @@ a.button:hover {
 }
 
 /* Colores específicos por red */
-.links a[href*="wa.me"]        { color: #049637; background: rgba(6, 228, 87, 0.384); }
-.links a[href*="linkedin.com"] { color: #c9e0f8; background: rgba(4, 123, 228, 0.863); }
-.links a[href*="youtube.com"]  { color: #FF0000; background: rgba(255,   0,   0,   0.1); }
-.links a[href*="inmocrypto.es"]{ color: #007BFF; background: rgba(0,  123, 255, 0.1); }
+.links a[href*="wa"]        { color: #049637; background: rgba(6, 228, 87, 0.384); }
+.links a[href*="linkedin"] { color: #c9e0f8; background: rgba(4, 123, 228, 0.863); }
+.links a[href*="youtube"]  { color: #FF0000; background: rgba(255,   0,   0,   0.1); }
+.links a[href*="web"]{ color: #007BFF; background: rgba(0,  123, 255, 0.1); }
 .links a.instagram             { color: #E4405F; background: rgba(228,  64,  95, 0.1); }
 
 /* Ajustes responsivos */
