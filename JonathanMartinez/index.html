@@ -36,7 +36,21 @@
   
 </head>
 <body> 
-
+<!-- AVISO DE PWA-->
+ <div id="aviso-pwa" class="aviso-pwa aviso-pwa-fijo">
+  <span>
+    🚀 <strong>¡Tarjeta offline!</strong><br>
+    Puedes guardar esta tarjeta en tu móvil:<br>
+    <button id="pwa-install-btn" class="pwa-install-btn" style="display:none;margin-top:8px;">
+      📲 Añadir a pantalla de inicio
+    </button>
+    <span id="pwa-manual">
+      <b>Android:</b> Menú → “Añadir a pantalla de inicio”<br>
+      <b>iPhone:</b> Compartir → “Añadir a pantalla de inicio”
+    </span>
+  </span>
+  <button id="cerrar-aviso-pwa" class="cerrar-aviso-pwa" aria-label="Cerrar aviso">&times;</button>
+</div>
    
   <!--CONTENEDOR DEL CIRCULO EN MOVIMIENTO-->
   <!--<div class="container">
@@ -179,6 +193,44 @@ END:VCARD
     a.remove();
     URL.revokeObjectURL(url);
   });
+
+  let deferredPrompt;
+
+// Mostrar solo si no está oculto en localStorage
+document.addEventListener('DOMContentLoaded', function() {
+  // Comprueba si el usuario ya lo ha cerrado
+  if (localStorage.getItem('avisoPWAoculto') === '1') {
+    var aviso = document.getElementById('aviso-pwa');
+    if(aviso) aviso.style.display = 'none';
+  }
+
+  // Botón cerrar aviso
+  var botonCerrar = document.getElementById('cerrar-aviso-pwa');
+  if(botonCerrar){
+    botonCerrar.addEventListener('click', function() {
+      var aviso = document.getElementById('aviso-pwa');
+      if(aviso) aviso.style.display = 'none';
+      // Guarda el cierre en localStorage
+      localStorage.setItem('avisoPWAoculto', '1');
+    });
+  }
+
+  // Botón instalar PWA
+  var installBtn = document.getElementById('pwa-install-btn');
+  if(installBtn){
+    installBtn.addEventListener('click', async function() {
+      if (deferredPrompt) {
+        deferredPrompt.prompt();
+        const { outcome } = await deferredPrompt.userChoice;
+        // Puedes ocultar el botón tras la elección
+        if (outcome === 'accepted' || outcome === 'dismissed') {
+          installBtn.style.display = 'none';
+        }
+        deferredPrompt = null;
+      }
+    });
+  }
+});
 </script>
 
   

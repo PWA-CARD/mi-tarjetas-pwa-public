@@ -547,6 +547,64 @@ a.button:hover {
   }
 */
 
+
+/*ESTILOS PARA AVISO DE PWA*/
+.aviso-pwa.aviso-pwa-fijo {
+  position: fixed;
+  top: 18px;
+  right: 18px;
+  width: 310px;
+  z-index: 10000;
+  background: #e0fce7;
+  color: #217a47;
+  border-radius: 14px;
+  box-shadow: 0 2px 14px rgba(33, 122, 71, 0.13);
+  padding: 18px 44px 18px 18px;
+  font-size: 1em;
+  text-align: left;
+  animation: slideInRight 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+
+@keyframes slideInRight {
+  from { transform: translateX(60px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+.cerrar-aviso-pwa {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  background: transparent;
+  border: none;
+  color: #217a47;
+  font-size: 1.5em;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+  transition: color 0.2s;
+}
+
+.cerrar-aviso-pwa:hover {
+  color: #d44d4d;
+}
+
+.pwa-install-btn {
+  background: #217a47;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 9px 14px;
+  font-size: 1em;
+  cursor: pointer;
+  margin: 6px 0 10px 0;
+  transition: background 0.2s;
+  display: inline-block;
+}
+.pwa-install-btn:hover {
+  background: #17904b;
+}
+
 /* Redes sociales */
 .links {
   display: flex;
