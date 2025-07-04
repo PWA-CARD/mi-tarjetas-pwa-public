@@ -2,22 +2,48 @@ const TARJETAS = [
   {
     nombre: "Jonathan Martínez",
     desc: "Tarjeta de contacto personal y profesional.",
-    img: "tarjeta1/mifoto.png",
+    img: "yo.png",
     url: "https://pwa-card.github.io/mi-tarjetas-pwa-public/cliente_00001_jonmarpa/"
   },
   {
     nombre: "Laura López-DEMO",
     desc: "Tarjeta digital para networking.",
-    img: "tarjeta2/mifoto.png",
+    img: "laura.png",
     url: "https://pwa-card.github.io/mi-tarjetas-pwa-public/cliente-DEMO/"
   },
   {
     nombre: "Ejemplo Empresa",
     desc: "Tarjeta corporativa con datos de empresa.",
-    img: "tarjeta3/logo2.png",
+    img: "empresa.png",
     url: "https://pwa-card.github.io/mi-tarjetas-pwa-public/cliente-YO-DEMO/"
   }
 ];
+
+function mostrarModal(gifSrc, descripcion) {
+  document.getElementById('gifModalImg').src = gifSrc;
+  document.getElementById('gifModalDesc').innerText = descripcion;
+  document.getElementById('gifModal').style.display = 'flex';
+}
+
+function cerrarModal() {
+  document.getElementById('gifModal').style.display = 'none';
+  document.getElementById('gifModalImg').src = ''; // opcional, limpia
+}
+
+// Cerrar si clicas fuera del contenido
+window.onclick = function(event) {
+  const modal = document.getElementById('gifModal');
+  if (event.target === modal) {
+    cerrarModal();
+  }
+}
+  // También cerrar si se hace clic fuera del contenido
+  window.onclick = function(event) {
+    const modal = document.getElementById('modalGIF');
+    if (event.target === modal) {
+      cerrarModal();
+    }
+  }
 
 function mostrarTarjetas(filtro="") {
   const cont = document.getElementById('tarjetas-listado');

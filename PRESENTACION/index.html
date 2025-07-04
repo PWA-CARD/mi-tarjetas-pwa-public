@@ -69,23 +69,55 @@
       <h2 class="subtitulo">Ejemplos de tarjetas digitales</h2>
       <div class="ejemplos-galeria">
         <!-- Ejemplo 1 -->
-        <div class="ejemplo-tarjeta">
-          <img src="ejemplos/ejemplo1.png" alt="Ejemplo 1">
-          <div class="ejemplo-txt">
-            <b>Tarjeta corporativa</b>
-            <span>Colores de empresa + datos completos</span>
-          </div>
-        </div>
+        <!-- Vista normal -->
+<!-- Vista normal -->
+<div class="ejemplo-tarjeta">
+  <img src="laura.gif" alt="Ejemplo 1" class="gif-mini" onclick="mostrarModal('laura.gif', 'Tarjeta digital personalizada')">
+  <div class="ejemplo-txt">
+    <b>Tarjeta Personalizada</b>
+    <span>Colores a tu gusto + datos completos</span>
+  </div>
+</div>
+<!-- Ejemplo 2 -->
+        <!-- Vista normal -->
+<!-- Vista normal -->
+<div class="ejemplo-tarjeta">
+  <img src="yo.gif" alt="Ejemplo 2" class="gif-mini" onclick="mostrarModal('yo.gif', 'Tarjeta digital minimalista')">
+  <div class="ejemplo-txt">
+    <b>Tarjeta Minimalista</b>
+    <span>Foto, nombre y QR</span>
+  </div>
+</div>
+<!-- Ejemplo 3 -->
+        <!-- Vista normal -->
+<!-- Vista normal -->
+<div class="ejemplo-tarjeta">
+  <img src="yo-empresa.gif" alt="Ejemplo 3" class="gif-mini" onclick="mostrarModal('yo-empresa.gif', 'Tarjeta digital empresarial')">
+  <div class="ejemplo-txt">
+    <b>Tarjeta Empresarial</b>
+    <span>Colores corporativos + logo + datos completos</span>
+  </div>
+</div>
+
+<div id="gifModal" class="modal">
+  <div class="modal-content">
+    <span class="cerrar" onclick="cerrarModal()">&times;</span>
+    <img id="gifModalImg" class="gif-grande" src="">
+    <p id="gifModalDesc" class="descripcion-gif"></p>
+  </div>
+</div>
+
+
         <!-- Ejemplo 2 -->
-        <div class="ejemplo-tarjeta">
+        <!--<div class="ejemplo-tarjeta">
           <img src="ejemplos/ejemplo2.png" alt="Ejemplo 2">
           <div class="ejemplo-txt">
             <b>Tarjeta minimalista</b>
             <span>Foto, nombre y QR para compartir</span>
           </div>
-        </div>
+        </div>-->
         <!-- Ejemplo 3 -->
-        <div class="ejemplo-tarjeta">
+        <!--<div class="ejemplo-tarjeta">
           <img src="ejemplos/ejemplo3.png" alt="Ejemplo 3">
           <div class="ejemplo-txt">
             <b>Con enlaces directos</b>
@@ -96,7 +128,7 @@
       <div class="cta-mas-ejemplos">
         <a href="#contacto" class="btn-ejemplo">Quiero mi tarjeta digital</a>
       </div>
-    </div>
+    </div>-->
   </section>
 
   <section class="proceso-section">

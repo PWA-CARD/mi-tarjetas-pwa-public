@@ -25,10 +25,34 @@
     crossorigin="anonymous"
     referrerpolicy="no-referrer"
   />
+<!-- Registrar Service Worker -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('./sw.js')
+        .then(() => console.log('Service Worker registrado correctamente'))
+        .catch(err => console.log('Error al registrar Service Worker:', err));
+    }
+  </script>
 
   
 </head>
 <body>
+
+  <!-- AVISO DE PWA-->
+ <div id="aviso-pwa" class="aviso-pwa aviso-pwa-fijo">
+  <span>
+    🚀 <strong>¡Tarjeta offline!</strong><br>
+    Puedes guardar esta tarjeta en tu móvil:<br>
+    <button id="pwa-install-btn" class="pwa-install-btn" style="display:none;margin-top:8px;">
+      📲 Añadir a pantalla de inicio
+    </button>
+    <span id="pwa-manual">
+      <b>Android:</b> Menú → “Añadir a pantalla de inicio”<br>
+      <b>iPhone:</b> Compartir → “Añadir a pantalla de inicio”
+    </span>
+  </span>
+  <button id="cerrar-aviso-pwa" class="cerrar-aviso-pwa" aria-label="Cerrar aviso">&times;</button>
+</div>
   
   <div class="container">
     <!-- Nombre y título -->
@@ -143,26 +167,73 @@ URL:https://inmocrypto.es
 URL:https://wa.me/34661734712
 PHOTO;ENCODING=b;TYPE= 
 END:VCARD
-`;
+`;-->
+<script>
+  document.getElementById('downloadVCard').addEventListener('click', function(e){
+    e.preventDefault();
+    const vCardData = 'jonathan.vcf';
     const blob = new Blob([vCardData], {type: 'text/vcard'});
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
-    a.href = url;
-    a.download = 'JonathanMartinez.vcf';
+    a.href = 'jonathan.vcf';
+    a.download = 'jonathan.vcf';
     document.body.appendChild(a);
     a.click();
     a.remove();
     URL.revokeObjectURL(url);
   });
-</script>-->
+</script>
+<script>
+let deferredPrompt;
 
-  <!-- Registrar Service Worker -->
-  <script>
-    if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('./sw.js')
-        .then(() => console.log('Service Worker registrado correctamente'))
-        .catch(err => console.log('Error al registrar Service Worker:', err));
-    }
-  </script>
+// Mostrar solo si no está oculto en localStorage
+document.addEventListener('DOMContentLoaded', function() {
+  // Comprueba si el usuario ya lo ha cerrado
+  if (localStorage.getItem('avisoPWAoculto') === '1') {
+    var aviso = document.getElementById('aviso-pwa');
+    if(aviso) aviso.style.display = 'none';
+  }
+
+  // Botón cerrar aviso
+  var botonCerrar = document.getElementById('cerrar-aviso-pwa');
+  if(botonCerrar){
+    botonCerrar.addEventListener('click', function() {
+      var aviso = document.getElementById('aviso-pwa');
+      if(aviso) aviso.style.display = 'none';
+      // Guarda el cierre en localStorage
+      localStorage.setItem('avisoPWAoculto', '1');
+    });
+  }
+
+  // Botón instalar PWA
+  var installBtn = document.getElementById('pwa-install-btn');
+  if(installBtn){
+    installBtn.addEventListener('click', async function() {
+      if (deferredPrompt) {
+        deferredPrompt.prompt();
+        const { outcome } = await deferredPrompt.userChoice;
+        // Puedes ocultar el botón tras la elección
+        if (outcome === 'accepted' || outcome === 'dismissed') {
+          installBtn.style.display = 'none';
+        }
+        deferredPrompt = null;
+      }
+    });
+  }
+});
+
+// Evento PWA
+window.addEventListener('beforeinstallprompt', (e) => {
+  e.preventDefault();
+  deferredPrompt = e;
+  // Muestra el botón solo si es posible instalar
+  const btn = document.getElementById('pwa-install-btn');
+  if(btn) btn.style.display = 'inline-block';
+  // Opcional: puedes ocultar las instrucciones manuales si quieres
+  // document.getElementById('pwa-manual').style.display = 'none';
+});
+</script>
+  
+  
 </body>
 </html>
