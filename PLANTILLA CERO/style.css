@@ -521,7 +521,7 @@ a.button:hover {
     left: 0;
     width: 30vw;
     height: auto;
-    bottom: 18vh;
+    bottom: 24vh;
   }
 }
 @media (max-width: 600px) {
@@ -535,7 +535,7 @@ a.button:hover {
     left: 0;
     width: 30vw;
     height: auto;
-    bottom: 16vh;
+    bottom: 24vh;
   }
   .logo{
   margin: 0;
