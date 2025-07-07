@@ -58,6 +58,13 @@ body {
 bottom: 3vh;
 position: relative;
 }*/
+.container-logo{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  bottom: 6vh;;
+}
 .logo{
   width: 30vw;
   height: auto;
@@ -65,6 +72,45 @@ position: relative;
   box-shadow: 0px 0px 20px rgba(0,0,0,0.5);*/
   animation: mover-logo 3s ease-in-out;
   border-radius: 50%;
+  bottom: 16vh;
+}
+
+.foto {
+  display: flex;
+  flex-direction: column;   /* Uno encima del otro */
+  align-items: center;        /* Centra todo horizontalmente */
+  gap: 10px;                /* Espacio entre imagen y botón */
+  margin-bottom: 24px;      /* Espacio abajo si lo necesitas */
+}
+.bottom-section{
+
+}
+.contact-info{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  bottom: 16vh;
+  position: absolute;
+}
+
+.foto-perfil {
+  width: 30vw;              /* 30% del ancho de la pantalla: súper responsivo */
+ max-width: 160px;         /* Nunca más grande que esto */
+  min-width: 70px;          /* Ni más pequeña que esto */
+  height: auto;           /* Mantén la proporción */   
+  object-fit: cover;
+  gap: 0;
+  position: relative;
+  margin-right: 65vw;
+  bottom: -2vh;
+  
+}
+/*.foto{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
 }
 .foto-perfil{
   display: block;  
@@ -72,9 +118,10 @@ position: relative;
   width: 30vw;
   height: auto;
   left:0;   
+  bottom: 11vh;
   animation: mover-foto 5s ease-in-out;
 
-}
+}*/
 /*aside{
   display: block;  
   position:fixed;
@@ -114,14 +161,15 @@ aside img{
   -webkit-perspective: 600px;
           perspective: 600px;
   display: grid;
-  grid-template-columns: repeat(3, 50px);
-  grid-template-rows: repeat(3, 50px);
+  grid-template-columns: repeat(3, 5vw);
+  grid-template-rows: repeat(3, 5vw);
   grid-gap: 20px;
   max-width: 300px;
   -webkit-transform: rotate(45deg);
           transform: rotate(45deg);
-          bottom: 10vh;
+          bottom: 12vh;
   position: relative;
+  z-index: -1;
 }
 .grid div {
   background: rgba(255, 255, 255, 0.15);
@@ -158,7 +206,6 @@ aside img{
 
 footer{
   position: fixed;
-
   bottom: 1vh;;
   z-index: 1;
   display: flex;
@@ -166,11 +213,13 @@ footer{
   align-items: center;
   width: 100vw;
   height: auto;
+  gap: 16px;
   background: transparent;
   color: #fff;
   font-size: 16px;
   font-weight: bold;
-  text-align: center;
+  text-align: center; 
+  
   animation: mover-footer 3s ease-in-out;
   
 
@@ -186,14 +235,14 @@ footer{
 }
 
 /* Información de contacto */
-.contact-info {
+/*.contact-info {
   width: 50vw;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-between;
+  justify-content:flex-start;  
   gap: 8px;
-}
+}*/
 .contact-info a {
   color: #007BFF;
   text-decoration: none;
@@ -220,7 +269,7 @@ a.button {
   text-align: center;
   box-shadow: 0 4px 10px rgba(0,123,255,0.2);
   transition: background 0.3s ease, box-shadow 0.3s ease;
-  z-index: 1;
+  
 
   /*flecha que recorre*/
   position: relative;
@@ -229,7 +278,7 @@ a.button {
 a.button:hover {
   background: #0056b3;
   box-shadow: 0 6px 14px rgba(0,123,255,0.3);
-  z-index: 1;
+  
 }
 /* -----------------------------------
   2) Keyframes: la flecha avanza un tramo corto
@@ -420,6 +469,9 @@ a.button:hover {
 .links a.instagram             { color: #E4405F; background: rgba(228, 64, 94, 0.39); }
 
 .aviso-pwa.aviso-pwa-fijo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   position: fixed;
   top: 18px;
   right: 18px;
@@ -429,7 +481,7 @@ a.button:hover {
   color: #217a47;
   border-radius: 14px;
   box-shadow: 0 2px 14px rgba(33, 122, 71, 0.13);
-  padding: 18px 44px 18px 18px;
+  padding: 4px 4px 4px 4px;
   font-size: 1em;
   text-align: left;
   animation: slideInRight 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
@@ -467,7 +519,7 @@ a.button:hover {
   padding: 9px 14px;
   font-size: 1em;
   cursor: pointer;
-  margin: 6px 0 10px 0;
+  margin: 3px 0 5px 0;
   transition: background 0.2s;
   display: inline-block;
 }
@@ -485,15 +537,29 @@ a.button:hover {
     position: relative;
     bottom: 3vh;
   }
-  .logo{
+  span{
+    font-size: 0.9em;
+  }
+  .aviso-pwa.aviso-pwa-fijo{
+    max-width: 250px;
+  height: auto;
+    display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: fixed;
+  top: 2px;
+  right: 2px;
+  width: 200px;
+  }
+  /*.logo{
     margin: 0;
     max-width: 30vw;
     height: auto;
     bottom: 3vh;
     position: relative;
     top: -15vh;
-  }
-  .grid{
+  }*/
+  /*.grid{
     -webkit-box-flex: 0;
     flex: 0 0 auto;
     -webkit-perspective: 600px;
@@ -507,7 +573,7 @@ a.button:hover {
     transform: rotate(45deg);
     bottom: 16vh;
     position: relative;
-  }
+  }*/
   .qr-space{
     position: relative;
     margin-top: 0;
@@ -516,13 +582,13 @@ a.button:hover {
     height: auto;
     bottom: 13vh;
   }
-  .foto-perfil{
+  /*.foto-perfil{
     position: fixed;
     left: 0;
     width: 30vw;
     height: auto;
     bottom: 24vh;
-  }
+  }*/
 }
 @media (max-width: 600px) {
   h1 { font-size: 1.8em; }
@@ -530,21 +596,21 @@ a.button:hover {
     width: 100vw;
     height: 100vh;
   }
-  .foto-perfil{
+  /*.foto-perfil{
     position: fixed;
     left: 0;
     width: 30vw;
     height: auto;
     bottom: 24vh;
-  }
-  .logo{
+  }*/
+  /*.logo{
   margin: 0;
   max-width: 30vw;
   height: auto;
 bottom: 3vh;
 position: relative;
 top: -14vh;
-}
+}*/
  .qr-space {
    position: relative;
   margin-top: 0;
@@ -553,7 +619,7 @@ top: -14vh;
   height: auto;
   bottom: 12vh;
   }
-  .grid{
+  /*.grid{
     -webkit-box-flex: 0;
           flex: 0 0 auto;
   -webkit-perspective: 600px;
@@ -568,23 +634,24 @@ top: -14vh;
           bottom: 16vh;
   position: relative;
   z-index: -1; 
-}
+}*/
   .name{
-    top: -13vh;
+    top: -14vh;
   margin: 0 auto;  
   position: relative;  
   bottom: 3vh;
 } 
-.contact-info{
+/*.contact-info{
   display: flex;
   flex-direction: column;
   align-items: center;
-}
+  font-size: 0.9em;;
+}*/
 
-footer{
+/*footer{
   bottom: 1vh;
   position: fixed;
-}
+}*/
 }
  
 
@@ -594,20 +661,20 @@ footer{
     width: 100vw;
     height: 100vh;
   }
-  .logo{
+  /*.logo{
   margin: 0;
   max-width: 30vw;
   height: auto;
 bottom: 3vh;
 position: relative;
-}
-.foto-perfil{
+}*/
+/*.foto-perfil{
     position: fixed;
     left: 0;
     width: 30vw;
     height: auto;
     bottom: 10vh;
-  }
+  }*/
   .qr-space {
     position: relative;
     margin-top: 0;
@@ -616,7 +683,7 @@ position: relative;
     height: auto;
     bottom: 3vh;
   }
-  .grid{
+  /*.grid{
     -webkit-box-flex: 0;
           flex: 0 0 auto;
     -webkit-perspective: 600px;
@@ -630,22 +697,22 @@ position: relative;
             transform: rotate(45deg);
             bottom: 9vh;
     position: relative;
-  }
+  }*/
   .name{
     margin: 0 auto;
     position: relative;
     bottom: 3vh;
     top: -8vh;
  }
- .contact-info{
+ /*.contact-info{
   display: flex;
   flex-direction: column;
   align-items: center;
- }
- footer{
+ }*/
+ /*footer{
   bottom: 1vh;
   position: fixed;
- }
+ }*/
  }
 @media (min-width: 1025px) {
   body{
@@ -661,14 +728,14 @@ position: relative;
     bottom: 3vh;
     top: auto;
   }
-  .foto-perfil{
+  /*.foto-perfil{
     position: fixed;
     left: 0;
     width: 30vw;
     height: auto;
     bottom: 10vh;
-  }
-  .logo{ 
+  }*/
+  /*.logo{ 
     max-width: 20vw;
     height: auto;
     position: relative;
@@ -676,9 +743,9 @@ position: relative;
     top: 3vh;
     margin: 1vw;
     
-  }
+  }*/
   
-  .grid {
+  /*.grid {
     flex: 0 0 auto;
     perspective: 600px;
     display: grid;
@@ -689,15 +756,15 @@ position: relative;
     transform: rotate(45deg);
     bottom: 10vh;
     position: relative;
-  }
+  }*/
   .name {
     top: -5vh;
     margin: 0 auto;
     position: relative;
     bottom: 3vh;
   }
-  footer{
+  /*footer{
   bottom: 1vh;
   position: fixed;
- }
+ }*/
 }
