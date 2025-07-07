@@ -721,7 +721,7 @@ a.button:hover {
     margin: 0;
     padding: 0;
     border-radius: 0;
-    bottom: 10vh;
+    bottom: 3vh;
   }
   
 }
@@ -747,7 +747,7 @@ a.button:hover {
     margin: 0;
     padding: 0;
     border-radius: 0;
-    bottom: 10vh;
+    bottom: 4vh;
   }
 }
 
@@ -772,7 +772,7 @@ a.button:hover {
     margin: 0;
     padding: 0;
     border-radius: 0;
-    bottom: 10vh;
+    bottom: 4vh;
   }
 }
 @media (min-width: 1200px) {
@@ -788,6 +788,6 @@ a.button:hover {
     margin: 0;
     padding: 0;
     border-radius: 0;
-    bottom: 10vh;
+    bottom: 4vh;
   }
 }
