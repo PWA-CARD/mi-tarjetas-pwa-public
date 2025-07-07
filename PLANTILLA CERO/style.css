@@ -3,9 +3,9 @@
 }
 
 .name{ 
-  top: 2vh; 
+  top: 3vh; 
   margin: 0 auto;  
-  position: fixed;
+  position: absolute;
   clear: both;
   bottom: 3vh;
 }
@@ -63,16 +63,16 @@ position: relative;
   justify-content: center;
   align-items: center;
   position: relative;
-  bottom: 6vh;;
+  bottom: 6vh;
 }
 .logo{
-  width: 30vw;
+  width: 25vw;
   height: auto;
  /* border-radius: 8%;
   box-shadow: 0px 0px 20px rgba(0,0,0,0.5);*/
   animation: mover-logo 3s ease-in-out;
   border-radius: 50%;
-  bottom: 16vh;
+  bottom: 2vh;
 }
 
 .foto {
@@ -161,8 +161,8 @@ aside img{
   -webkit-perspective: 600px;
           perspective: 600px;
   display: grid;
-  grid-template-columns: repeat(3, 5vw);
-  grid-template-rows: repeat(3, 5vw);
+  grid-template-columns: repeat(3, 7vw);
+  grid-template-rows: repeat(3, 7vw);
   grid-gap: 20px;
   max-width: 300px;
   -webkit-transform: rotate(45deg);
@@ -531,12 +531,12 @@ a.button:hover {
 
 /* Ajustes responsivos */
 @media (min-width:300px) and (max-width: 599px){
-  .name{
+  /*.name{
     top: -20vh;
     margin: 0 auto;
     position: relative;
     bottom: 3vh;
-  }
+  }*/
   span{
     font-size: 0.9em;
   }
@@ -635,12 +635,12 @@ top: -14vh;
   position: relative;
   z-index: -1; 
 }*/
-  .name{
+  /*.name{
     top: -14vh;
   margin: 0 auto;  
   position: relative;  
   bottom: 3vh;
-} 
+} */
 /*.contact-info{
   display: flex;
   flex-direction: column;
@@ -698,12 +698,12 @@ position: relative;
             bottom: 9vh;
     position: relative;
   }*/
-  .name{
+  /*.name{
     margin: 0 auto;
     position: relative;
     bottom: 3vh;
     top: -8vh;
- }
+ }*/
  /*.contact-info{
   display: flex;
   flex-direction: column;
@@ -757,12 +757,12 @@ position: relative;
     bottom: 10vh;
     position: relative;
   }*/
-  .name {
+  /*.name {
     top: -5vh;
     margin: 0 auto;
     position: relative;
     bottom: 3vh;
-  }
+  }*/
   /*footer{
   bottom: 1vh;
   position: fixed;
