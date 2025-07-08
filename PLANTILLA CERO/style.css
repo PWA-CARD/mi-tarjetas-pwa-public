@@ -63,7 +63,8 @@ position: relative;
   justify-content: center;
   align-items: center;
   position: relative;
-  bottom: 6vh;
+  bottom: 2vh;
+  top: 2vh;
 }
 .logo{
   width: 25vw;
@@ -72,7 +73,7 @@ position: relative;
   box-shadow: 0px 0px 20px rgba(0,0,0,0.5);*/
   animation: mover-logo 3s ease-in-out;
   border-radius: 50%;
-  bottom: 2vh;
+  
 }
 
 .foto {
@@ -167,7 +168,7 @@ aside img{
   max-width: 300px;
   -webkit-transform: rotate(45deg);
           transform: rotate(45deg);
-          bottom: 12vh;
+          bottom: 6vh;
   position: relative;
   z-index: -1;
 }
@@ -551,14 +552,21 @@ a.button:hover {
   right: 2px;
   width: 200px;
   }
-  /*.logo{
-    margin: 0;
-    max-width: 30vw;
-    height: auto;
-    bottom: 3vh;
+  .container-logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     position: relative;
-    top: -15vh;
-  }*/
+    bottom: 4vh;
+    top: 2vh;
+  }
+  .logo{ 
+    max-width: 17vw;
+    height: auto;
+    position: relative;
+    
+    
+  }
   /*.grid{
     -webkit-box-flex: 0;
     flex: 0 0 auto;
@@ -603,14 +611,21 @@ a.button:hover {
     height: auto;
     bottom: 24vh;
   }*/
-  /*.logo{
-  margin: 0;
-  max-width: 30vw;
-  height: auto;
-bottom: 3vh;
-position: relative;
-top: -14vh;
-}*/
+ .container-logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    bottom: 4vh;
+    top: 2vh;
+  }
+  .logo{ 
+    max-width: 17vw;
+    height: auto;
+    position: relative;
+    
+    
+  }
  .qr-space {
    position: relative;
   margin-top: 0;
@@ -661,13 +676,21 @@ top: -14vh;
     width: 100vw;
     height: 100vh;
   }
-  /*.logo{
-  margin: 0;
-  max-width: 30vw;
-  height: auto;
-bottom: 3vh;
-position: relative;
-}*/
+  .container-logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    bottom: 4vh;
+    top: 2vh;
+  }
+  .logo{ 
+    max-width: 17vw;
+    height: auto;
+    position: relative;
+    
+    
+  }
 /*.foto-perfil{
     position: fixed;
     left: 0;
@@ -735,17 +758,23 @@ position: relative;
     height: auto;
     bottom: 10vh;
   }*/
-  /*.logo{ 
-    max-width: 20vw;
+  .container-logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    bottom: 4vh;
+    top: 2vh;
+  }
+  .logo{ 
+    max-width: 17vw;
     height: auto;
     position: relative;
-    bottom: 3vh;
-    top: 3vh;
-    margin: 1vw;
     
-  }*/
+    
+  }
   
-  /*.grid {
+  .grid {
     flex: 0 0 auto;
     perspective: 600px;
     display: grid;
@@ -756,7 +785,7 @@ position: relative;
     transform: rotate(45deg);
     bottom: 10vh;
     position: relative;
-  }*/
+  }
   /*.name {
     top: -5vh;
     margin: 0 auto;
