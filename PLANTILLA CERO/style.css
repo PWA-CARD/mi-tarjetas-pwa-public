@@ -73,6 +73,7 @@ position: relative;
   box-shadow: 0px 0px 20px rgba(0,0,0,0.5);*/
   animation: mover-logo 3s ease-in-out;
   border-radius: 50%;
+  position: absolute;
   
 }
 
@@ -236,7 +237,7 @@ footer{
   align-items: center;
   gap: 10px;
   position: absolute;
-  bottom: 18vh;
+  bottom: 14vh;
 }
 
 /* Información de contacto */
@@ -456,6 +457,7 @@ a.button:hover {
   margin: auto;
   height: auto;
   gap: 5px;
+  top: 2vh;
   bottom: 1vh;
   position: relative;
 }
@@ -543,7 +545,7 @@ a.button:hover {
 
 
 /* Ajustes responsivos */
-@media (min-width:300px) {
+@media (max-width:600px) {
   /*.name{
     top: -20vh;
     margin: 0 auto;
@@ -573,18 +575,28 @@ a.button:hover {
     top: 2vh;
   }
   .logo{ 
-    max-width: 25vw;
+    max-width: 20vw;
     height: auto;
     position: relative;
-    bottom: 5vh;    
+    bottom: 3vh;    
     
   }
+  .bottom-section {
+  width: 100vw;
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  position: absolute;
+  bottom: 8vh;
+}
   .contact-info{
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 10px;
-  bottom: 20vh;
+  gap: 3px;
+  bottom: 10vh;
   position: absolute;
   z-index: 1000;
 }
@@ -611,93 +623,31 @@ a.button:hover {
     height: auto;
     bottom: 13vh;
   }
-  /*.foto-perfil{
-    position: fixed;
-    left: 0;
-    width: 30vw;
-    height: auto;
-    bottom: 24vh;
-  }*/
-}
-/*@media (max-width: 600px) {
-  h1 { font-size: 1.8em; }
-  body{
-    width: 100vw;
-    height: 100vh;
-  }
-  /*.foto-perfil{
-    position: fixed;
-    left: 0;
-    width: 30vw;
-    height: auto;
-    bottom: 24vh;
-  }*/
- /*.container-logo{
+  .links{
     display: flex;
+    gap: 12px;
     justify-content: center;
-    align-items: center;
-    position: relative;
-    bottom: 4vh;
+  }
+  .links a{
+    flex: 1 1 0;
+    width: 100%;
+    min-width: 80px;
+    max-width: 220px;
+    height: 24px;
+    
+    box-sizing: border-box;
+    font-size: clamp(0.6rem, 3vw, 1.2rem);
+    border-radius: 20px;
+    white-space: nowrap;
+    cursor: pointer;
     top: 2vh;
+    text-overflow: ellipsis;
   }
-  .logo{ 
-    max-width: 25vw;
-    height: auto;
-    position: relative;
-    bottom: 5vh;
-    
-    
-  }
-  .contact-info{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-  bottom: 15vh;
-  position: absolute;
+  .links a:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
- .qr-space {
-   position: relative;
-  margin-top: 0;
-  margin-left: 65vw;
-  max-width: 20vw;
-  height: auto;
-  bottom: 12vh;
-  }
-  /*.grid{
-    -webkit-box-flex: 0;
-          flex: 0 0 auto;
-  -webkit-perspective: 600px;
-          perspective: 600px;
-  display: grid;
-  grid-template-columns: repeat(3, 10vw);
-  grid-template-rows: repeat(3, 10vw);
-  grid-gap: 10px;
-  max-width: 300px;
-  -webkit-transform: rotate(45deg);
-          transform: rotate(45deg);
-          bottom: 16vh;
-  position: relative;
-  z-index: -1; 
-}*/
-  /*.name{
-    top: -14vh;
-  margin: 0 auto;  
-  position: relative;  
-  bottom: 3vh;
-} */
-/*.contact-info{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  font-size: 0.9em;;
-}*/
 
-/*footer{
-  bottom: 1vh;
-  position: fixed;
-}*/
-/*}*/
  
 .contact-info a:hover {
   color: #0056b3;
@@ -707,6 +657,7 @@ a.button:hover {
   background: #0056b3;
   box-shadow: 0 6px 14px rgba(0,123,255,0.3);
   
+}
 }
  @media (min-width: 601px) and (max-width: 1024px){
   h1 { font-size: 2em; }
@@ -723,19 +674,29 @@ a.button:hover {
     top: 2vh;
   }
   .logo{ 
-    max-width: 25vw;
+    max-width: 20vw;
     height: auto;
     position: relative;
     bottom: 5vh;
     
     
   }
+  .bottom-section {
+  width: 100vw;
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  position: absolute;
+  bottom: 8vh;
+}
   .contact-info{
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 10px;
-  bottom: 15vh;
+  bottom: 10vh;
   position: absolute;
 }
 /*.foto-perfil{
@@ -753,36 +714,42 @@ a.button:hover {
     height: auto;
     bottom: 3vh;
   }
-  /*.grid{
-    -webkit-box-flex: 0;
-          flex: 0 0 auto;
-    -webkit-perspective: 600px;
-            perspective: 600px;
-    display: grid;
-    grid-template-columns: repeat(3, 50px);
-    grid-template-rows: repeat(3, 50px);
-    grid-gap: 15px;
+  .links{
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+  }
+  .links a{
+    flex: 1 1 0;
+    width: 100%;
+    min-width: 140px;
     max-width: 300px;
-    -webkit-transform: rotate(45deg);
-            transform: rotate(45deg);
-            bottom: 9vh;
-    position: relative;
-  }*/
-  /*.name{
-    margin: 0 auto;
-    position: relative;
-    bottom: 3vh;
-    top: -8vh;
- }*/
- /*.contact-info{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
- }*/
- /*footer{
-  bottom: 1vh;
-  position: fixed;
- }*/
+    height: 30px;
+    
+    box-sizing: border-box;
+    font-size: clamp(0.6rem, 3vw, 1.2rem);
+    border-radius: 20px;
+    white-space: nowrap;
+    cursor: pointer;
+    top: 2vh;
+    text-overflow: ellipsis;
+  }
+   .links a:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+ 
+.contact-info a:hover {
+  color: #0056b3;
+  z-index: 1000;
+}
+a.button:hover {
+  background: #0056b3;
+  box-shadow: 0 6px 14px rgba(0,123,255,0.3);
+  
+}
+  
  }
 @media (min-width: 1025px) {
   body{
@@ -798,36 +765,52 @@ a.button:hover {
     bottom: 3vh;
     top: auto;
   }
-  /*.foto-perfil{
-    position: fixed;
-    left: 0;
-    width: 30vw;
-    height: auto;
-    bottom: 10vh;
-  }*/
-  .container-logo{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    bottom: 4vh;
-    top: 2vh;
-  }
+  
   .logo{ 
     max-width: 17vw;
     height: auto;
     position: relative;
-    bottom: 5vh;
+    bottom: 0vh;
     
   }
+  .bottom-section {
+  width: 100vw;
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  position: absolute;
+  bottom: 8vh;
+}
   .contact-info{
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 10px;
-  bottom: 15vh;
+  bottom: 12vh;
   position: absolute;
 }
+.links{
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+  }
+  .links a{
+    flex: 1 1 0;
+    width: 100%;
+    min-width: 80px;
+    max-width: 220px;
+    height: 24px;
+    
+    box-sizing: border-box;
+    font-size: clamp(0.6rem, 3vw, 1.2rem);
+    border-radius: 20px;
+    white-space: nowrap;
+    cursor: pointer;
+    top: 2vh;
+    text-overflow: ellipsis;
+  }
   
   .grid {
     flex: 0 0 auto;
@@ -841,6 +824,21 @@ a.button:hover {
     bottom: 10vh;
     position: relative;
   }
+   .links a:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+ 
+.contact-info a:hover {
+  color: #0056b3;
+  z-index: 1000;
+}
+a.button:hover {
+  background: #0056b3;
+  box-shadow: 0 6px 14px rgba(0,123,255,0.3);
+  
+}
   /*.name {
     top: -5vh;
     margin: 0 auto;
