@@ -91,8 +91,10 @@ position: relative;
   flex-direction: column;
   align-items: center;
   gap: 10px;
-  bottom: 16vh;
-  position: absolute;
+  bottom: 15vh;
+  position: absolute;    
+  height: auto;
+  
 }
 
 .foto-perfil {
@@ -232,7 +234,9 @@ footer{
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 15px;
+  gap: 10px;
+  position: absolute;
+  bottom: 18vh;
 }
 
 /* Información de contacto */
@@ -252,9 +256,11 @@ footer{
   gap: 6px;
   font-size: 1.2em;
   transition: color 0.3s ease;
+  z-index: 1000;
 }
 .contact-info a:hover {
   color: #0056b3;
+  z-index: 1000;
 }
 
 /* Botón vCard */
@@ -443,9 +449,15 @@ a.button:hover {
 /* Redes sociales */
 .links {
   display: flex;
+  flex-direction:row;
   flex-wrap: wrap;
+  align-items: center;
   justify-content: center;
-  gap: 15px;
+  margin: auto;
+  height: auto;
+  gap: 5px;
+  bottom: 1vh;
+  position: relative;
 }
 .links a {
   display: flex;
@@ -531,7 +543,7 @@ a.button:hover {
 
 
 /* Ajustes responsivos */
-@media (min-width:300px) and (max-width: 599px){
+@media (min-width:300px) {
   /*.name{
     top: -20vh;
     margin: 0 auto;
@@ -561,27 +573,36 @@ a.button:hover {
     top: 2vh;
   }
   .logo{ 
-    max-width: 17vw;
+    max-width: 25vw;
     height: auto;
     position: relative;
-    
+    bottom: 5vh;    
     
   }
-  /*.grid{
+  .contact-info{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  bottom: 20vh;
+  position: absolute;
+  z-index: 1000;
+}
+  .grid{
     -webkit-box-flex: 0;
     flex: 0 0 auto;
     -webkit-perspective: 600px;
     perspective: 600px;
     display: grid;
-    grid-template-columns: repeat(3, 10vw);
-    grid-template-rows: repeat(3, 10vw);
+    grid-template-columns: repeat(3, 12vw);
+    grid-template-rows: repeat(3, 12vw);
     grid-gap: 10px;
     max-width: 300px;
     -webkit-transform: rotate(45deg);
     transform: rotate(45deg);
-    bottom: 16vh;
+    bottom: 5vh;
     position: relative;
-  }*/
+  }
   .qr-space{
     position: relative;
     margin-top: 0;
@@ -598,7 +619,7 @@ a.button:hover {
     bottom: 24vh;
   }*/
 }
-@media (max-width: 600px) {
+/*@media (max-width: 600px) {
   h1 { font-size: 1.8em; }
   body{
     width: 100vw;
@@ -611,7 +632,7 @@ a.button:hover {
     height: auto;
     bottom: 24vh;
   }*/
- .container-logo{
+ /*.container-logo{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -620,12 +641,21 @@ a.button:hover {
     top: 2vh;
   }
   .logo{ 
-    max-width: 17vw;
+    max-width: 25vw;
     height: auto;
     position: relative;
+    bottom: 5vh;
     
     
   }
+  .contact-info{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  bottom: 15vh;
+  position: absolute;
+}
  .qr-space {
    position: relative;
   margin-top: 0;
@@ -667,9 +697,17 @@ a.button:hover {
   bottom: 1vh;
   position: fixed;
 }*/
-}
+/*}*/
  
-
+.contact-info a:hover {
+  color: #0056b3;
+  z-index: 1000;
+}
+a.button:hover {
+  background: #0056b3;
+  box-shadow: 0 6px 14px rgba(0,123,255,0.3);
+  
+}
  @media (min-width: 601px) and (max-width: 1024px){
   h1 { font-size: 2em; }
   body{
@@ -685,12 +723,21 @@ a.button:hover {
     top: 2vh;
   }
   .logo{ 
-    max-width: 17vw;
+    max-width: 25vw;
     height: auto;
     position: relative;
+    bottom: 5vh;
     
     
   }
+  .contact-info{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  bottom: 15vh;
+  position: absolute;
+}
 /*.foto-perfil{
     position: fixed;
     left: 0;
@@ -770,9 +817,17 @@ a.button:hover {
     max-width: 17vw;
     height: auto;
     position: relative;
-    
+    bottom: 5vh;
     
   }
+  .contact-info{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  bottom: 15vh;
+  position: absolute;
+}
   
   .grid {
     flex: 0 0 auto;
