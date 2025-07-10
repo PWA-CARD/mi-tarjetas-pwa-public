@@ -6,9 +6,12 @@
   
 }
 .fondo-img{
-  
+  background-attachment: fixed;
+ background-repeat: no-repeat;
+ background-size: cover;
+ background-position: center;
   position: fixed;
-  top: 40vh;
+  top: 60vh;  
   left: 0;
   width: 100%;
   height: 100%;
@@ -19,8 +22,8 @@
   mask-image: linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
 }
 .logocrypto{
-  position: fixed;
-  top: 62vh;
+  position: relative;
+  top: 50vh;
   width: 30vw;
   height: auto;
   left: 0;
@@ -86,7 +89,8 @@ body {
   position: absolute;
   width: 30vw;
   height: auto;
-  left:0;   
+  left:0; 
+  top: 60vh;  
   animation: mover-logocry 5s ease-in-out;
 
 }
@@ -186,6 +190,7 @@ footer{
   gap: 15px;
 }
 
+
 /* Información de contacto */
 .contact-info {
   width: 50vw;
@@ -201,7 +206,7 @@ footer{
   display: flex;
   align-items: center;
   gap: 6px;
-  font-size: 1.2em;
+  font-size: 1.4em;
   transition: color 0.3s ease;
 }
 .contact-info a:hover {
@@ -461,13 +466,13 @@ a.button:hover {
     position: relative;
     top: -15vh;
   }
-  .logocrypto{
+  /*.logocry{
   position: fixed;
-  top: 70vh;
+  top: 60vh;
   width: 30vw;
   height: auto;
   left: 0;
-}
+}*/
   .grid{
     -webkit-box-flex: 0;
     flex: 0 0 auto;
@@ -505,6 +510,7 @@ a.button:hover {
     height: 30vh;
   }
   .links a{
+    color: aliceblue;
     font-size: 0.8em;
   }
   .bottom-section{
@@ -524,17 +530,19 @@ a.button:hover {
     gap: 8px;
   }
   .contact-info a {
-    color: #007BFF;
+    color: #dceafa;
     text-decoration: none;
     display: flex;
     align-items: center;
     gap: 6px;
-    font-size: 0.8em;
+    font-size: 0.9em;
     transition: color 0.3s ease;
   }
 }
 @media (max-width: 600px) {
   h1 { font-size: 1.8em; }
+  a{font-size: 0.9em;}
+  
   body{
     width: 100vw;
     height: 100vh;
@@ -554,13 +562,13 @@ bottom: 3vh;
 position: relative;
 top: -19vh;
 }
-.logocrypto{
+/*.logocrypto{
   position: fixed;
   top: 70vh;
   width: 30vw;
   height: auto;
   left: 0;
-}
+}*/
  .qr-space {
    position: relative;
   margin-top: 0;
@@ -606,6 +614,7 @@ footer{
 
  @media (min-width: 601px) and (max-width: 1024px){
   h1 { font-size: 2em; }
+  a{font-size: 1em;}
   body{
     width: 100vw;
     height: 100vh;
@@ -617,13 +626,13 @@ footer{
 bottom: 3vh;
 position: relative;
 }
-.logocrypto{
+/*.logocrypto{
   position: fixed;
   top: 65vh;
   width: 30vw;
   height: auto;
   left: 0;
-}
+}*/
 .foto-perfil{
     position: fixed;
     left: 0;
@@ -675,6 +684,9 @@ position: relative;
     width: 100vw;
     height: 100vh;
   }
+  a{
+    font-size: 1.2em;
+  }
   .qr-space {
     max-width: 20vw;
     height: auto;
@@ -698,13 +710,13 @@ position: relative;
 bottom: 3vh;
 position: relative;
 }
-.logocrypto{
+/*.logocrypto{
   position: fixed;
   top: 70vh;
   width: 30vw;
   height: auto;
   left: 0;
-}
+}*/
   
   .grid {
     flex: 0 0 auto;
