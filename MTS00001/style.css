@@ -73,14 +73,7 @@ body {
           overflow: scroll;
           background-attachment: fixed;
 }
-/*.container-logo{
-  top: 2vh;
-  margin: 0;
-  max-width: 20vw;
-  height: auto;
-bottom: 3vh;
-position: relative;
-}*/
+
 .logo{
   width: 25vw;
   height: auto;
@@ -90,28 +83,14 @@ position: relative;
 }
 .logocrypto{
   display: block;  
-  position:fixed;
+  position: absolute;
   width: 30vw;
   height: auto;
   left:0;   
   animation: mover-logocry 5s ease-in-out;
 
 }
-/*aside{
-  display: block;  
-  position:fixed;
-  left:0;
-  
-  
-  max-width: 60vw;
-  animation: mover-foto 3s ease-in-out;
 
-}
-aside img{
-  width: 100vw;
-  height: auto;
-  
-}*/
 
 .qr-space{
   position: relative;
@@ -226,7 +205,7 @@ footer{
   transition: color 0.3s ease;
 }
 .contact-info a:hover {
-  color: #0056b3;
+  color: #4b7aac;
 }
 
 /* Botón vCard */
@@ -289,21 +268,7 @@ a.button:hover {
     transform: translateY(-50%) rotate(-45deg);
   }
 }
-/*@keyframes mover-photo{
 
-  0%{
-    right: 0px;
-    opacity: 0;
-    transform: translateX(100%);
-  }
-     
-  10%{
-   right: 16px;
-    opacity: 0;
-    transform: translateX(-100%);
-  }
-
-}*/
 @keyframes mover-logo{
    0%{
     right: 16px;
@@ -356,28 +321,7 @@ a.button:hover {
     transform: translateX(0);
   }
 }
-/*@keyframes slide {
-  0% {
-    background-position: 0% 0%;
-  }
-  100% {
-    background-position: 100% 0%;
-  }
-}
 
-/*@keyframes ripple{
-  0%{
-    transform: scale(0.3);
-  }
-  
-  50%{
-    transform: scale(0.5);
-  }
-  
-  100%{
-    transform: scale(0.3);
-  }
-}*/
 
 /* -----------------------------------
   3) Estilos de la flecha (.flecha-boton)
@@ -519,7 +463,7 @@ a.button:hover {
   }
   .logocrypto{
   position: fixed;
-  top: 63vh;
+  top: 70vh;
   width: 30vw;
   height: auto;
   left: 0;
@@ -610,6 +554,13 @@ bottom: 3vh;
 position: relative;
 top: -19vh;
 }
+.logocrypto{
+  position: fixed;
+  top: 70vh;
+  width: 30vw;
+  height: auto;
+  left: 0;
+}
  .qr-space {
    position: relative;
   margin-top: 0;
@@ -665,6 +616,13 @@ footer{
   height: auto;
 bottom: 3vh;
 position: relative;
+}
+.logocrypto{
+  position: fixed;
+  top: 65vh;
+  width: 30vw;
+  height: auto;
+  left: 0;
 }
 .foto-perfil{
     position: fixed;
@@ -739,6 +697,13 @@ position: relative;
   height: auto;
 bottom: 3vh;
 position: relative;
+}
+.logocrypto{
+  position: fixed;
+  top: 65vh;
+  width: 30vw;
+  height: auto;
+  left: 0;
 }
   
   .grid {
