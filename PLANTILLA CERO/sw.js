@@ -7,7 +7,7 @@ const CORE_ASSETS = [
   './mifoto.png',
   './jonathan.vcf',
   './logo2.png',
-  './qr-personal.png',
+  './QRMTS00001.png',
   './icons/apple-icon-180.png',
   './icons/icon-192.png',
   './icons/icon-512.png'
