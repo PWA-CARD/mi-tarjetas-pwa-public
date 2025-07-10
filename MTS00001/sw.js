@@ -1,4 +1,4 @@
-const CACHE_NAME = 'tarjeta-jm-v1.0.1.1';
+const CACHE_NAME = 'tarjeta-jm-v1.0.1.2';
 const CORE_ASSETS = [
   './index.html',
   './styles.css',
@@ -6,8 +6,8 @@ const CORE_ASSETS = [
   './sw.js',
   './logocrypto.png',
   './OmarArturoMartias.vcf',
-  './logo1.png',  
-  './qr-personal.png',
+  './logo1.png',
+  './QRMTS00001.png',
   './icons/apple-icon-180.png',
   './icons/icon-192.png',
   './icons/icon-512.png'
