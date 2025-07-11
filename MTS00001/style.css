@@ -17,7 +17,7 @@
   height: 100%;
   z-index: -1;
   overflow: hidden;
-  opacity: 0.2; 
+  opacity: 0.4; 
   background-image: linear-gradient(to top, rgba(141, 71, 134, 0.7), rgba(255, 255, 255, 0.1));
   mask-image: linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
 }
@@ -78,16 +78,26 @@ body {
 }
 
 .logo{
-  width: 25vw;
+  margin: 0;
+  max-width: 35vw;
   height: auto;
-  
-  animation: mover-logo 3s ease-in-out;
-  
+bottom: 3vh;
+position: fixed;
+top: 14vh;
+z-index: 10;
+left: 50%;
+transform: translateX(-50%);
+animation: mover-logo 3s ease-in-out;
 }
+  
+  
+  
+
 
 .logocrypto{
+  margin: 0;
   display: block;  
-  position: absolute;
+  position: fixed;
   width: 30vw;
   height: auto;
   left:0; 
@@ -98,12 +108,12 @@ body {
 
 
 .qr-space{
-  position: relative;
+  position: fixed;
   margin-top: 0;
   margin-left: 60vw;
   max-width: 20vw;
   height: auto;
-  bottom: 3vh;
+  bottom: 60vh;
   animation: mover-qr 3s ease-in-out;
   
 }
@@ -115,6 +125,7 @@ body {
 }
 
 .grid {
+  margin: 0 auto;
   -webkit-box-flex: 0;
           flex: 0 0 auto;
   -webkit-perspective: 600px;
@@ -122,20 +133,26 @@ body {
   display: grid;
   grid-template-columns: repeat(3, 50px);
   grid-template-rows: repeat(3, 50px);
-  grid-gap: 20px;
-  max-width: 300px;
+  grid-gap: 2vw;
+  max-width: 40vw; 
+  height: auto; 
   -webkit-transform: rotate(45deg);
           transform: rotate(45deg);
-          bottom: 10vh;
-  position: relative;
+          bottom: 40vh;
+  position: fixed;
+  z-index: -1;
+  
+  
+
 }
 .grid div {
+  margin: 0 auto;
   background: rgba(255, 255, 255, 0.15);
   border: 1px solid rgba(255, 255, 255, 0.25);
   padding: 20px;
   color: transparent;
   box-shadow: 30px 30px 30px -20px rgba(0, 0, 0, 0.6);
-  border-radius: 2px;
+  border-radius: 3px;
 }
 .grid div:nth-child(odd) {
   -webkit-animation: 1000ms ease-in-out infinite alternate pulse;
@@ -148,16 +165,16 @@ body {
 
 @-webkit-keyframes pulse {
   to {
-    -webkit-transform: translate3d(0px, 0px, -60px);
-            transform: translate3d(0px, 0px, -60px);
+    -webkit-transform: translate3d(0px, 0px, -30px);
+            transform: translate3d(0px, 0px, -30px);
     box-shadow: 15px 15px 20px -20px rgba(0, 0, 0, 0.8);
   }
 }
 
 @keyframes pulse {
   to {
-    -webkit-transform: translate3d(0px, 0px, -60px);
-            transform: translate3d(0px, 0px, -60px);
+    -webkit-transform: translate3d(0px, 0px, -30px);
+            transform: translate3d(0px, 0px, -30px);
     box-shadow: 15px 15px 20px -20px rgba(0, 0, 0, 0.8);
   }
 }
@@ -454,19 +471,33 @@ a.button:hover {
 /* Ajustes responsivos */
 @media (min-width:300px) and (max-width: 599px){
   .name{
-    top: -20vh;
+    top: 2vh;
     margin: 0 auto;
-    position: relative;
+    position: fixed;
     bottom: 3vh;
   }
   .logo{
+  margin: 0;
+  max-width: 35vw;
+  height: auto;
+bottom: 3vh;
+position: fixed;
+top: 14vh;
+z-index: 10;
+left: 50%;
+transform: translateX(-50%);
+}
+  .logocrypto{
     margin: 0;
-    max-width: 30vw;
-    height: auto;
-    bottom: 3vh;
-    position: relative;
-    top: -15vh;
-  }
+  display: block;  
+  position: fixed;
+  width: 30vw;
+  height: auto;
+  left:0; 
+  top: 55vh;  
+  animation: mover-logocry 5s ease-in-out;
+
+}
   /*.logocry{
   position: fixed;
   top: 60vh;
@@ -474,7 +505,7 @@ a.button:hover {
   height: auto;
   left: 0;
 }*/
-  .grid{
+  /*.grid{
     -webkit-box-flex: 0;
     flex: 0 0 auto;
     -webkit-perspective: 600px;
@@ -488,22 +519,22 @@ a.button:hover {
     transform: rotate(45deg);
     bottom: 16vh;
     position: relative;
-  }
-  .qr-space{
-    position: relative;
+  }*/
+  /*.qr-space{
+    position: fixed;
     margin-top: 0;
     margin-left: 65vw;
     max-width: 20vw;
     height: auto;
     bottom: 13vh;
-  }
-  .foto-perfil{
+  }*/
+  /*.foto-perfil{
     position: fixed;
     left: 0;
     width: 30vw;
     height: auto;
     bottom: 18vh;
-  }
+  }*/
   footer{
     bottom: 1vh;
     position: fixed;
@@ -548,21 +579,38 @@ a.button:hover {
     width: 100vw;
     height: 100vh;
   }
-  .foto-perfil{
+  /*.foto-perfil{
     position: fixed;
     left: 0;
     width: 30vw;
     height: auto;
     bottom: 11vh;
-  }
-  .logo{
+  }*/
+  /*.logo{
   margin: 0;
-  max-width: 30vw;
+  max-width: 35vw;
   height: auto;
 bottom: 3vh;
-position: relative;
-top: -19vh;
+position: fixed;
+top: 14vh;
+z-index: 10;
+left: 50%;
+transform: translateX(-50%);
+}*/
+.logocrypto{
+  margin: 0;
+  padding: 0;
+  display: block;  
+  position: fixed;
+  width: 35vw;
+  height: auto;
+  left:0; 
+  top: 55vh;  
+  animation: mover-logocry 5s ease-in-out;
+z-index: 30;
 }
+
+
 /*.logocrypto{
   position: fixed;
   top: 70vh;
@@ -570,34 +618,38 @@ top: -19vh;
   height: auto;
   left: 0;
 }*/
- .qr-space {
+ /*.qr-space {
    position: relative;
   margin-top: 0;
   margin-left: 65vw;
   max-width: 20vw;
   height: auto;
   bottom: 12vh;
-  }
-  .grid{
+  }*/
+  /*.grid{
     -webkit-box-flex: 0;
           flex: 0 0 auto;
   -webkit-perspective: 600px;
           perspective: 600px;
   display: grid;
-  grid-template-columns: repeat(3, 10vw);
-  grid-template-rows: repeat(3, 10vw);
-  grid-gap: 10px;
-  max-width: 300px;
+  
+  grid-template-columns: repeat(3, 12vw);
+  grid-template-rows: repeat(3, 12vw);
+  grid-gap: 20px;
+  width: 100vw;
+  max-width: 90vw;
+  min-width: 120px;
   -webkit-transform: rotate(45deg);
           transform: rotate(45deg);
-          bottom: 16vh;
-  position: relative;
+          bottom: 20vh;
+  position: fixed;
   z-index: -1; 
-}
+}*/
   .name{
-    top: -22vh;
+    max-width: 100vw;
+    top: 2vh;
   margin: 0 auto;  
-  position: relative;  
+  position: fixed;  
   bottom: 3vh;
 } 
 .contact-info{
@@ -605,12 +657,23 @@ top: -19vh;
   flex-direction: column;
   align-items: center;
 }
+.contact-info a {
+  color: #dceafa;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 1.1em;
+  transition: color 0.3s ease;
+ 
+ }
 
-footer{
+  footer{
   bottom: 1vh;
   position: fixed;
+ }
 }
-}
+
  
 
  @media (min-width: 601px) and (max-width: 1024px){
@@ -620,12 +683,23 @@ footer{
     width: 100vw;
     height: 100vh;
   }
-  .logo{
+  /*.logo{
   margin: 0;
-  max-width: 30vw;
+  max-width: 35vw;
   height: auto;
 bottom: 3vh;
-position: relative;
+top: 6vh;
+position: fixed;
+}*/
+.logocrypto{
+  display: block;  
+  position: absolute;
+  width: 35vw;
+  height: auto;
+  left:0; 
+  top: 55vh;  
+  animation: mover-logocry 5s ease-in-out;
+
 }
 /*.logocrypto{
   position: fixed;
@@ -634,22 +708,22 @@ position: relative;
   height: auto;
   left: 0;
 }*/
-.foto-perfil{
+/*.foto-perfil{
     position: fixed;
     left: 0;
     width: 30vw;
     height: auto;
     bottom: 10vh;
-  }
-  .qr-space {
+  }*/
+  /*.qr-space {
     position: relative;
     margin-top: 0;
     margin-left: 60vw;
     max-width: 20vw;
     height: auto;
     bottom: 3vh;
-  }
-  .grid{
+  }*/
+  /*.grid{
     -webkit-box-flex: 0;
           flex: 0 0 auto;
     -webkit-perspective: 600px;
@@ -663,23 +737,30 @@ position: relative;
             transform: rotate(45deg);
             bottom: 9vh;
     position: relative;
-  }
+  }*/
   .name{
     margin: 0 auto;
-    position: relative;
+    position: fixed;
     bottom: 3vh;
-    top: -4vh;
+    top: 2vh;
  }
  .contact-info{
   display: flex;
   flex-direction: column;
   align-items: center;
+  
  }
- footer{
-  bottom: 1vh;
-  position: fixed;
+ .contact-info a {
+  color: #dceafa;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 1.1em;
+  transition: color 0.3s ease;
+ 
  }
- }
+}
 @media (min-width: 1025px) {
   body{
     width: 100vw;
@@ -688,7 +769,7 @@ position: relative;
   a{
     font-size: 1.2em;
   }
-  .qr-space {
+  /*.qr-space {
     max-width: 20vw;
     height: auto;
     margin-left: 70vw;
@@ -696,20 +777,31 @@ position: relative;
     position: relative;
     bottom: 3vh;
     top: auto;
-  }
-  .foto-perfil{
+  }*/
+  /*.foto-perfil{
     position: fixed;
     left: 0;
     width: 30vw;
     height: auto;
     bottom: 10vh;
-  }
-  .logo{
+  }*/
+  /*.logo{
   margin: 0;
-  max-width: 30vw;
+  max-width: 35vw;
   height: auto;
+  top: 6vh;
 bottom: 3vh;
-position: relative;
+position: fixed;
+}*/
+.logocrypto{
+  display: block;  
+  position: absolute;
+  width: 35vw;
+  height: auto;
+  left:0; 
+  top: 55vh;  
+  animation: mover-logocry 5s ease-in-out;
+
 }
 /*.logocrypto{
   position: fixed;
@@ -719,7 +811,7 @@ position: relative;
   left: 0;
 }*/
   
-  .grid {
+  /*.grid {
     flex: 0 0 auto;
     perspective: 600px;
     display: grid;
@@ -730,13 +822,23 @@ position: relative;
     transform: rotate(45deg);
     bottom: 10vh;
     position: relative;
-  }
+  }*/
   .name {
-    top: -4vh;
+    top: 2vh;
     margin: 0 auto;
-    position: relative;
+    position: fixed;
     bottom: 3vh;
   }
+  .contact-info a {
+  color: #dceafa;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 1.1em;
+  transition: color 0.3s ease;
+ 
+ }
   footer{
   bottom: 1vh;
   position: fixed;
