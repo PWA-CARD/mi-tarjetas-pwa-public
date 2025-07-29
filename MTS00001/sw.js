@@ -5,6 +5,7 @@ const CORE_ASSETS = [
   './manifest.json',
   './sw.js',
   './logocrypto.png',
+  './omar.png',
   './OmarArturoMartias.vcf',
   './logo1.png',
   './QRMTS00001.png',

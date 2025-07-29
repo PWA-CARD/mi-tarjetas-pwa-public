@@ -98,6 +98,7 @@ animation: mover-logo 3s ease-in-out;
   margin: 0;
   display: block;  
   position: fixed;
+  border-radius: 50%;
   width: 30vw;
   height: auto;
   left:0; 
@@ -402,14 +403,15 @@ a.button:hover {
 }
 
 /* Colores específicos por red */
-.links a[href*="wa.me"]        { color: #6fec9d; background: rgba(37, 211, 101, 0.479); }
+.links a[href*="wa.me"]        { color: #fbfcfb; background: rgba(37, 211, 101, 0.479); }
 .links a[href*="linkedin.com"] { color: #eceef0; background: rgba(28, 136, 245, 0.479); }
 .links a[href*="youtube.com"]  { color: #FF0000; background: rgba(255, 0, 0, 0.267); }
 .links a[href*="inmocrypto.es"]{ color: #b7cfe9; background: rgba(0, 123, 255, 0.479); }
-.links a[href*="instagram.com"]{ color: #d49fa9; background: rgba(228, 64, 94, 0.39); }
+.links a[href*="instagram.com"]{ color: #fdfdfd; background: rgba(228, 64, 94, 0.39); }
 .links a[href*="facebook.com"] { color: #eff1f5; background: rgba(24, 119, 242, 0.479); }
 .links a[href*="https://www.mtspropiedades.com/"] { color: #c754f5; background: rgba(255, 255, 255, 0.479); }
-
+.links a[href*="https://inmocrypto.es/"] { background: url("logocrypto.png"); }
+.links a[href*="https://inmocrypto.es/"] {background: rgba(249, 250, 250, 0.479)}
 .aviso-pwa.aviso-pwa-fijo {
   position: fixed;
   top: 18px;
