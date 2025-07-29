@@ -393,7 +393,7 @@ a.button:hover {
   gap: 6px;
   text-decoration: none;
   font-size: 1.1em;
-  padding: 8px 12px;
+  padding: 2px 2px;
   border-radius: 20px;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
@@ -403,15 +403,15 @@ a.button:hover {
 }
 
 /* Colores específicos por red */
-.links a[href*="wa.me"]        { color: #fbfcfb; background: rgba(37, 211, 101, 0.479); }
-.links a[href*="linkedin.com"] { color: #eceef0; background: rgba(28, 136, 245, 0.479); }
-.links a[href*="youtube.com"]  { color: #FF0000; background: rgba(255, 0, 0, 0.267); }
-.links a[href*="inmocrypto.es"]{ color: #b7cfe9; background: rgba(0, 123, 255, 0.479); }
-.links a[href*="instagram.com"]{ color: #fdfdfd; background: rgba(228, 64, 94, 0.39); }
-.links a[href*="facebook.com"] { color: #eff1f5; background: rgba(24, 119, 242, 0.479); }
-.links a[href*="https://www.mtspropiedades.com/"] { color: #c754f5; background: rgba(255, 255, 255, 0.479); }
-.links a[href*="https://inmocrypto.es/"] { background: url("logocrypto.png"); }
-.links a[href*="https://inmocrypto.es/"] {background: rgba(255, 253, 253, 0.479);}
+.links a[href*="wa.me"]        { color: #65f365; /*background: rgba(37, 211, 101, 0.479); */}
+.links a[href*="linkedin.com"] { color: #419af3; /*background: rgba(28, 136, 245, 0.479); */}
+.links a[href*="youtube.com"]  { color: #FF0000; /*background: rgba(255, 0, 0, 0.267);*/ }
+.links a[href*="inmocrypto.es"]{ color: #b7cfe9; /*background: rgba(0, 123, 255, 0.479);*/ }
+.links a[href*="instagram.com"]{ color: #fb1f1f; /*background: rgba(228, 64, 94, 0.39);*/ }
+.links a[href*="facebook.com"] { color: #0757f6;/* background: rgba(24, 119, 242, 0.479); */}
+.links a[href*="https://www.mtspropiedades.com/"] { color: #c754f5;/* background: rgba(255, 255, 255, 0.479);*/ }
+.links a[href*="https://inmocrypto.es/"] { background-image: url("logocrypto.png"); }
+/*.links a[href*="https://inmocrypto.es/"] {background: rgba(255, 253, 253, 0.479);}*/
 .aviso-pwa.aviso-pwa-fijo {
   position: fixed;
   top: 18px;
