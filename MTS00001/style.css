@@ -545,7 +545,7 @@ transform: translateX(-50%);
     height: 30vh;
   }
   .links a{
-    color: aliceblue;
+    /*color: aliceblue;*/
     font-size: 0.8em;
   }
   .bottom-section{
