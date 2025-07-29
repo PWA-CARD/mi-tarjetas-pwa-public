@@ -390,9 +390,9 @@ a.button:hover {
 .links a {
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 4px;
   text-decoration: none;
-  font-size: 1.1em;
+  
   padding: 2px 2px;
   border-radius: 20px;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
@@ -546,7 +546,7 @@ transform: translateX(-50%);
   }
   .links a{
     /*color: aliceblue;*/
-    font-size: 0.8em;
+    
   }
   .bottom-section{
     width: 100vw;
