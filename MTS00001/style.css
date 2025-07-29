@@ -411,7 +411,7 @@ a.button:hover {
 .links a[href*="facebook.com"] { color: #eff1f5; background: rgba(24, 119, 242, 0.479); }
 .links a[href*="https://www.mtspropiedades.com/"] { color: #c754f5; background: rgba(255, 255, 255, 0.479); }
 .links a[href*="https://inmocrypto.es/"] { background: url("logocrypto.png"); }
-.links a[href*="https://inmocrypto.es/"] {background: rgba(249, 250, 250, 0.479)}
+.links a[href*="https://inmocrypto.es/"] {background: rgba(255, 253, 253, 0.479);}
 .aviso-pwa.aviso-pwa-fijo {
   position: fixed;
   top: 18px;
@@ -493,6 +493,7 @@ transform: translateX(-50%);
     margin: 0;
   display: block;  
   position: fixed;
+  border-radius: 50%;
   width: 30vw;
   height: auto;
   left:0; 
@@ -604,6 +605,7 @@ transform: translateX(-50%);
   padding: 0;
   display: block;  
   position: fixed;
+  border-radius: 50%;
   width: 35vw;
   height: auto;
   left:0; 
@@ -697,6 +699,7 @@ position: fixed;
   display: block;  
   position: absolute;
   width: 35vw;
+  border-radius: 50%;
   height: auto;
   left:0; 
   top: 55vh;  
@@ -798,6 +801,7 @@ position: fixed;
 .logocrypto{
   display: block;  
   position: absolute;
+  border-radius: 50%;
   width: 35vw;
   height: auto;
   left:0; 
