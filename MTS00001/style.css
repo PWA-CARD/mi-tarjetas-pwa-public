@@ -500,7 +500,7 @@ transform: translateX(-50%);
   width: 30vw;
   height: auto;
   left:0; 
-  top: 55vh;  
+  top: 53vh;  
   animation: mover-logocry 5s ease-in-out;
 
 }
@@ -612,7 +612,7 @@ transform: translateX(-50%);
   width: 35vw;
   height: auto;
   left:0; 
-  top: 55vh;  
+  top: 53vh;  
   animation: mover-logocry 5s ease-in-out;
 z-index: 30;
 }
@@ -705,7 +705,7 @@ position: fixed;
   border-radius: 50%;
   height: auto;
   left:0; 
-  top: 55vh;  
+  top: 53vh;  
   animation: mover-logocry 5s ease-in-out;
 
 }
@@ -808,7 +808,7 @@ position: fixed;
   width: 35vw;
   height: auto;
   left:0; 
-  top: 55vh;  
+  top: 53vh;  
   animation: mover-logocry 5s ease-in-out;
 
 }
