@@ -139,7 +139,7 @@ animation: mover-logo 3s ease-in-out;
   height: auto; 
   -webkit-transform: rotate(45deg);
           transform: rotate(45deg);
-          bottom: 40vh;
+          bottom: 34vh;
   position: fixed;
   z-index: -1;
   
