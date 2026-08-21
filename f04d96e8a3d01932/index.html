@@ -1,18 +1,16 @@
-<!doctype html>
-<!--[if lte IE 9]>
-<html lang="en" class="oldie">
-<![endif]-->
-<!--[if gt IE 9]><!-->
-<html lang="en">
-<!--<![endif]-->
+<!DOCTYPE html>
+<html lang="es">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-   <title>Jonathan Martínez – Técnico de Sistemas</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jonathan Martínez – Técnico de Sistemas</title>
 
-   <!-- PWA: enlace al manifiesto -->
+  <!-- Tu CSS externo -->
+  <link rel="stylesheet" media="all" href="styles.css" />
+
+  <!-- PWA: enlace al manifiesto -->
   <link rel="manifest" href="./manifest.json" />
-  
+
   <!-- Metaetiquetas Apple -->
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -35,38 +33,11 @@
         .catch(err => console.log('Error al registrar Service Worker:', err));
     }
   </script>
-  <link rel="stylesheet" media="all" href="style.css" />
+  
 </head>
-<body>
-<div class="name">
-    <h1>Jonathan Martínez Pagán</h1>
-    <p class="role">Técnico de Sistemas – Consultor Informático</p>
-    </div>
-    <div class="container-logo">
-      <img src="logo2.png" alt="logo" class="logo"> 
-    </div>
-    <div class="qr-space">
-      <img src="qr-personal.png" alt="">
-      </div>
-      <div class="foto">
-        <img src="mifoto.png" alt="foto de perfil" class="foto-perfil">
-      </div>
-      
-  <!--<aside class="foto">
-    <img src="mifoto.png" alt="foto de perfil" class="foto-perfil">
-  </aside>-->
-<div class="grid">
-  <div>1</div>
-  <div>2</div>
-  <div>3</div>
-  <div>4</div>
-  <div>5</div>
-  <div>6</div>
-  <div>7</div>
-  <div>8</div>
-  <div>9</div>
-</div>
-<div id="aviso-pwa" class="aviso-pwa aviso-pwa-fijo">
+<body> 
+<!-- AVISO DE PWA-->
+ <div id="aviso-pwa" class="aviso-pwa aviso-pwa-fijo">
   <span>
     🚀 <strong>¡Tarjeta offline!</strong><br>
     Puedes guardar esta tarjeta en tu móvil:<br>
@@ -80,11 +51,38 @@
   </span>
   <button id="cerrar-aviso-pwa" class="cerrar-aviso-pwa" aria-label="Cerrar aviso">&times;</button>
 </div>
+   
+  <!--CONTENEDOR DEL CIRCULO EN MOVIMIENTO-->
+  <!--<div class="container">
+    <div class='ripple-background'>
+      <div class='circle xxlarge shade1'></div>
+      <div class='circle xlarge shade2'></div>
+      <div class='circle large shade3'></div>
+      <div class='circle medium shade4'></div>
+      <div class='circle small shade5'></div>
 
+    </div>-->
+    <!-- Nombre y título -->
+    <h1>Jonathan Martínez Pagán</h1>
+    <p class="role">Técnico de Sistemas – Consultor Informático</p>
+    <!--<div class="bg"></div>
+    <div class="bg bg2"></div>
+    <div class="bg bg3"></div>-->
+    <div class="container-logo">
+      <img src="logo2.png" alt="logo InmoCrypto" class="logo-principal__img"> 
+    </div> 
 
+    
 
-
-
+    <!-- Código QR -->
+    <div class="qr-space">
+      <img src="qr-personal.png" alt="Código QR" />
+    </div>
+    <div class="lines">
+  <div class="line"></div>
+  <div class="line"></div>
+  <div class="line"></div>
+</div>
 <footer>    <!-- Sección inferior: contacto, botón vCard, redes -->
     <div class="bottom-section">
       <!-- Email y teléfono -->
@@ -105,7 +103,7 @@
            +34 661 73 47 12
         </a>
       </div>
-
+    
       <!-- Botón “Agregar a Contactos” -->
       <a class="button" href="#" id="downloadVCard">
         <!--<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 16 16" style="margin-right:8px;">
@@ -165,9 +163,9 @@
         </a>
       </div>
     </div>
-  </div>  
+  </div>
+  
 </footer>
-
 <!-- En el apartado PHOTO;ENCODING=b;TYPE= "foto vcard base64"-->
   <script>
   document.getElementById('downloadVCard').addEventListener('click', function(e){
@@ -195,6 +193,7 @@ END:VCARD
     a.remove();
     URL.revokeObjectURL(url);
   });
+
   let deferredPrompt;
 
 // Mostrar solo si no está oculto en localStorage
@@ -232,19 +231,8 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 });
-
-// Evento PWA
-window.addEventListener('beforeinstallprompt', (e) => {
-  e.preventDefault();
-  deferredPrompt = e;
-  // Muestra el botón solo si es posible instalar
-  const btn = document.getElementById('pwa-install-btn');
-  if(btn) btn.style.display = 'inline-block';
-  // Opcional: puedes ocultar las instrucciones manuales si quieres
-  // document.getElementById('pwa-manual').style.display = 'none';
-});
-
 </script>
- 
+
+  
 </body>
 </html>
